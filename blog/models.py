@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.conf import settings
+from django.template.defaultfilters import slugify
 
 
 class Blog(models.Model):
@@ -16,3 +17,9 @@ class Blog(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        user = self.user
+        if self.id is None:
+            slugify(self.title)
+        super(Blog, self).save(*args, **kwargs)
