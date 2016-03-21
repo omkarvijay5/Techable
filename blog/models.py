@@ -23,3 +23,14 @@ class Blog(models.Model):
         if self.id is None:
             slugify(self.title)
         super(Blog, self).save(*args, **kwargs)
+
+
+class Category(models.Model):
+    """
+    category model which defines the category of a post.
+    """
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100)
+
+    def __unicode__(self):
+        return self.name
