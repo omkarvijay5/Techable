@@ -13,7 +13,6 @@ class Blog(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
     description = models.TextField()
-    user = models.OneToOneField(settings.AUTH_USER_MODEL)
 
     def __unicode__(self):
         return self.title
