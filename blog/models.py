@@ -36,6 +36,12 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        user = self.user
+        if self.id is None:
+            slugify(self.name)
+        super(Category, self).save(*args, **kwargs)
+
 
 class Post(models.Model):
     category = models.ForeignKey(Category)
@@ -45,3 +51,10 @@ class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
     is_published = models.BooleanField(default=False)
     text = MarkdownField()
+
+
+    def save(self, *args, **kwargs):
+        user = self.user
+        if self.id is None:
+            slugify(self.title)
+        super(Post, self).save(*args, **kwargs)
