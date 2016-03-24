@@ -52,6 +52,9 @@ class Post(models.Model):
     is_published = models.BooleanField(default=False)
     text = MarkdownField()
 
+    def __unicode__(self):
+        return self.title
+
 
     def save(self, *args, **kwargs):
         user = self.user
