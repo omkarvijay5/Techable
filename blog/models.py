@@ -4,6 +4,8 @@ from django.db import models
 from django.conf import settings
 from django.template.defaultfilters import slugify
 
+from django_markdown.models import MarkdownField
+
 
 class Blog(models.Model):
     """
@@ -33,3 +35,13 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class Post(models.Model):
+    category = models.ForeignKey(Category)
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100)
+    posted_on = models.DateTimeField()
+    author = models.ForeignKey(settings.AUTH_USER_MODEL)
+    is_published = models.BooleanField(default=False)
+    text = MarkdownField()
