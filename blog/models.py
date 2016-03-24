@@ -20,7 +20,6 @@ class Blog(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        user = self.user
         if self.id is None:
             slugify(self.title)
         super(Blog, self).save(*args, **kwargs)
@@ -37,7 +36,6 @@ class Category(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        user = self.user
         if self.id is None:
             slugify(self.name)
         super(Category, self).save(*args, **kwargs)
@@ -55,9 +53,7 @@ class Post(models.Model):
     def __unicode__(self):
         return self.title
 
-
     def save(self, *args, **kwargs):
-        user = self.user
         if self.id is None:
             slugify(self.title)
         super(Post, self).save(*args, **kwargs)
