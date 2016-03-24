@@ -9,8 +9,8 @@ from django_markdown.models import MarkdownField
 
 class Blog(models.Model):
     """
-    Each user can create his own blog through admin.
-    User can create only one blog of their own
+    only one blog can be created
+    slug: generates slug automatically while saving object
     """
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
@@ -42,6 +42,13 @@ class Category(models.Model):
 
 
 class Post(models.Model):
+    """
+    Different Authors can post their own articles in a particular category of the blog
+    posted_on: defines when post was being posted
+    is_published: True when post is live. When False it will be visible only
+    for the author. Author can view how post looks like and make approval for
+    publishing
+    """
     category = models.ForeignKey(Category)
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
