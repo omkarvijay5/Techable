@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.conf import settings
 from django.template.defaultfilters import slugify
+from django.core.exceptions import PermissionDenied
 
 from django_markdown.models import MarkdownField
 
@@ -20,7 +21,12 @@ class Blog(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        if self.id is None:
+        """
+        override save method to prevent creating more than one blog
+        """
+        if Blog.objects.count() == 1 and self.id is None:
+            raise PermissionDenied("you cannot create more than one blog")
+        elif self.id is None:
             slugify(self.title)
         super(Blog, self).save(*args, **kwargs)
 
