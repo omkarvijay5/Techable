@@ -2,10 +2,10 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.conf import settings
-from django.template.defaultfilters import slugify
 from django.core.exceptions import PermissionDenied
-
 from django_markdown.models import MarkdownField
+
+from blog_utils.slugify import unique_slugify
 
 
 class Blog(models.Model):
@@ -27,7 +27,7 @@ class Blog(models.Model):
         if Blog.objects.count() == 1 and self.id is None:
             raise PermissionDenied("you cannot create more than one blog")
         elif self.id is None:
-            slugify(self.title)
+            unique_slugify(self, self.title)
         super(Blog, self).save(*args, **kwargs)
 
 
@@ -43,7 +43,7 @@ class Category(models.Model):
 
     def save(self, *args, **kwargs):
         if self.id is None:
-            slugify(self.name)
+            unique_slugify(self, self.title)
         super(Category, self).save(*args, **kwargs)
 
 
@@ -68,5 +68,5 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         if self.id is None:
-            slugify(self.title)
+            unique_slugify(self, self.title)
         super(Post, self).save(*args, **kwargs)
