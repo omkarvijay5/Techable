@@ -1,17 +1,31 @@
 from django.contrib import admin
-from blog.models import Blog, Category, Post
+from django.forms import ValidationError, ModelForm
 
 from django_markdown.models import MarkdownField
 from django_markdown.widgets import AdminMarkdownWidget
+
+from blog.models import Blog, Category, Post
 
 
 class BaseAdminMixin(object):
     exclude = ('slug',)
 
 
+class BlogAdminForm(ModelForm):
+    class Meta:
+        model = Blog
+        exclude = ()
+
+    def clean(self):
+        blogs = Blog.objects.all()
+        if len(blogs) == 1:
+            raise ValidationError('You cannot create more than one blog')
+        return self.cleaned_data
+
+
 @admin.register(Blog)
 class BlogAdmin(BaseAdminMixin, admin.ModelAdmin):
-    pass
+    form = BlogAdminForm
 
 
 @admin.register(Category)
