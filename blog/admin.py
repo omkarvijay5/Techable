@@ -1,10 +1,9 @@
 from django.contrib import admin
 from django.forms import ValidationError, ModelForm
-
 from django_markdown.models import MarkdownField
 from django_markdown.widgets import AdminMarkdownWidget
 
-from blog.models import Blog, Category, Post
+from blog.models import Blog, Post, Image
 
 
 class BaseAdminMixin(object):
@@ -27,9 +26,8 @@ class BlogAdminForm(ModelForm):
 class BlogAdmin(BaseAdminMixin, admin.ModelAdmin):
     form = BlogAdminForm
 
-
-@admin.register(Category)
-class CategoryAdmin(BaseAdminMixin, admin.ModelAdmin):
+@admin.register(Image)
+class ImageAdmin(BaseAdminMixin, admin.ModelAdmin):
     pass
 
 
