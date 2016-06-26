@@ -81,3 +81,18 @@ class Post(models.Model):
         if self.id is None:
             unique_slugify(self, self.title)
         super(Post, self).save(*args, **kwargs)
+
+
+class Category(models.Model):
+    """
+    Category: classification of posts in an area of expertise
+    """
+    name = models.CharField(max_length=10)
+    description = models.TextField(null=True, blank=True)
+    posts = models.ManyToManyField('blog.Post', blank=True)
+
+    class Meta:
+        verbose_name_plural = 'categories'
+
+    def __unicode__(self):
+        return self.name
