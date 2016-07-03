@@ -46,6 +46,7 @@
         color: #fff; } .osc_servicebox { text-align: center; } .woocommerce .full-width { padding-left: 15px;
         padding-right: 15px; }
     </style>
+    <script type='text/javascript' src='{% static "js/bootstrap.min.js" %}'></script>
 
     <!--scroll to top, tags-->
     <script type='text/javascript' src='{% static "js/functions.min.js" %}'></script>
@@ -57,14 +58,11 @@
             //]]>
 
     </script>
-    <script type='text/javascript'
-            src='https://colorlib.com/sparkling/wp-content/plugins/jetpack/modules/infinite-scroll/infinity.js?ver=4.0.0'></script>
+    <script type='text/javascript' src='{% static "js/infinity.js" %}'></script>
 
     <!--used for flexslider-->
-    <script type='text/javascript'
-            src='https://colorlib.com/sparkling/wp-content/themes/sparkling/inc/js/flexslider.min.js?ver=20140222'></script>
-    <script type='text/javascript'
-            src='https://colorlib.com/sparkling/wp-content/themes/sparkling/inc/js/flexslider-custom.js?ver=20140716'></script>
+    <script type='text/javascript' src='{% static "js/flexslider.min.js" %}'></script>
+    <script type='text/javascript' src='{% static "js/flexslider-custom.js" %}'></script>
 
     {% block extra_scripts %}{% endblock %}
 
