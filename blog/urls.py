@@ -2,8 +2,11 @@
 
 The `urlpatterns` list routes URLs to blog views.
 """
-from django.conf.urls import url, include
-from django.contrib import admin
+from django.conf.urls import url, patterns
 
-urlpatterns = [
-]
+from blog.views import dashboard
+
+urlpatterns = patterns(
+    '',
+    url(r'^$', dashboard, name='dashboard'),
+)
