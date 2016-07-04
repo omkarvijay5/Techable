@@ -44,7 +44,9 @@
                                             </span>
 								           <span class="cat-links">
                                                <i class="fa fa-folder-open-o"></i>
-                                               tag1, tag2, tag3
+                                               {% for tag in post.tags %}
+                                                   {{tag}},
+                                               {% endfor %}
                                            </span>
 
                                         </div>
@@ -1011,39 +1013,12 @@
                             <div class="cats-widget">
 
                                 <ul>
-                                    <li class="cat-item cat-item-38"><a
-                                            href="https://colorlib.com/sparkling/category/post-formats/"
-                                            title="Posts in this category test post formats.">Post Formats</a>
-                                        <span>16</span>
-                                    </li>
-                                    <li class="cat-item cat-item-1"><a
-                                            href="https://colorlib.com/sparkling/category/uncategorized/">Uncategorized</a>
-                                        <span>10</span>
-                                    </li>
-                                    <li class="cat-item cat-item-49"><a
-                                            href="https://colorlib.com/sparkling/category/template-2/"
-                                            title="Posts with template-related tests">Template</a> <span>10</span>
-                                    </li>
-                                    <li class="cat-item cat-item-19"><a
-                                            href="https://colorlib.com/sparkling/category/edge-case-2/"
-                                            title="Posts that have edge-case related tests">Edge Case</a> <span>6</span>
-                                    </li>
-                                    <li class="cat-item cat-item-29"><a
-                                            href="https://colorlib.com/sparkling/category/markup/"
-                                            title="Posts in this category test markup tags and styles.">Markup</a>
-                                        <span>6</span>
-                                    </li>
-                                    <li class="cat-item cat-item-193"><a
-                                            href="https://colorlib.com/sparkling/category/slider/">Slider</a>
-                                        <span>3</span>
-                                    </li>
-                                    <li class="cat-item cat-item-30"><a
-                                            href="https://colorlib.com/sparkling/category/media-2/"
-                                            title="Posts that have media-related tests">Media</a> <span>2</span>
-                                    </li>
-                                    <li class="cat-item cat-item-190"><a
-                                            href="https://colorlib.com/sparkling/category/featured/">Featured</a> <span>2</span>
-                                    </li>
+                                    {% for category in categories %}
+                                        <li class="cat-item cat-item-38">
+                                            <a href="#">{{category.name}}</a>
+                                            <span>{{category.posts.all|length}}</span>
+                                        </li>
+                                    {% endfor %}
                                 </ul>
 
                             </div>
@@ -1174,133 +1149,14 @@
                         </aside>
                         <aside id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widget-title">Tags</h3>
 
-                            <div class="tagcloud"><a href='https://colorlib.com/sparkling/tag/8bit/'
+                            <div class="tagcloud">
+                                <a href='https://colorlib.com/sparkling/tag/8bit/'
                                                      class='tag-link-66 tag-link-position-1' title='1 topic'
                                                      style='font-size: 8pt;'>8BIT</a>
-                                <a href='https://colorlib.com/sparkling/tag/alignment-2/'
-                                   class='tag-link-67 tag-link-position-2' title='3 topics'
-                                   style='font-size: 12.516129032258pt;'>alignment</a>
-                                <a href='https://colorlib.com/sparkling/tag/articles/'
-                                   class='tag-link-68 tag-link-position-3' title='1 topic' style='font-size: 8pt;'>Articles</a>
-                                <a href='https://colorlib.com/sparkling/tag/aside/'
-                                   class='tag-link-69 tag-link-position-4' title='1 topic'
-                                   style='font-size: 8pt;'>aside</a>
-                                <a href='https://colorlib.com/sparkling/tag/audio/'
-                                   class='tag-link-70 tag-link-position-5' title='1 topic'
-                                   style='font-size: 8pt;'>audio</a>
-                                <a href='https://colorlib.com/sparkling/tag/captions-2/'
-                                   class='tag-link-71 tag-link-position-6' title='2 topics'
-                                   style='font-size: 10.709677419355pt;'>captions</a>
-                                <a href='https://colorlib.com/sparkling/tag/categories/'
-                                   class='tag-link-72 tag-link-position-7' title='2 topics'
-                                   style='font-size: 10.709677419355pt;'>categories</a>
-                                <a href='https://colorlib.com/sparkling/tag/chat/'
-                                   class='tag-link-73 tag-link-position-8' title='2 topics'
-                                   style='font-size: 10.709677419355pt;'>chat</a>
-                                <a href='https://colorlib.com/sparkling/tag/codex/'
-                                   class='tag-link-77 tag-link-position-9' title='3 topics'
-                                   style='font-size: 12.516129032258pt;'>Codex</a>
-                                <a href='https://colorlib.com/sparkling/tag/comments-2/'
-                                   class='tag-link-78 tag-link-position-10' title='4 topics'
-                                   style='font-size: 14.021505376344pt;'>comments</a>
-                                <a href='https://colorlib.com/sparkling/tag/content-2/'
-                                   class='tag-link-79 tag-link-position-11' title='12 topics'
-                                   style='font-size: 20.193548387097pt;'>content</a>
-                                <a href='https://colorlib.com/sparkling/tag/css/'
-                                   class='tag-link-81 tag-link-position-12' title='7 topics'
-                                   style='font-size: 17.032258064516pt;'>css</a>
-                                <a href='https://colorlib.com/sparkling/tag/dowork/'
-                                   class='tag-link-85 tag-link-position-13' title='1 topic' style='font-size: 8pt;'>dowork</a>
-                                <a href='https://colorlib.com/sparkling/tag/edge-case/'
-                                   class='tag-link-86 tag-link-position-14' title='8 topics'
-                                   style='font-size: 17.784946236559pt;'>edge case</a>
-                                <a href='https://colorlib.com/sparkling/tag/embeds-2/'
-                                   class='tag-link-87 tag-link-position-15' title='4 topics'
-                                   style='font-size: 14.021505376344pt;'>embeds</a>
-                                <a href='https://colorlib.com/sparkling/tag/excerpt-2/'
-                                   class='tag-link-91 tag-link-position-16' title='3 topics'
-                                   style='font-size: 12.516129032258pt;'>excerpt</a>
-                                <a href='https://colorlib.com/sparkling/tag/fail/'
-                                   class='tag-link-92 tag-link-position-17' title='1 topic'
-                                   style='font-size: 8pt;'>Fail</a>
-                                <a href='https://colorlib.com/sparkling/tag/featured-image/'
-                                   class='tag-link-93 tag-link-position-18' title='3 topics'
-                                   style='font-size: 12.516129032258pt;'>featured image</a>
-                                <a href='https://colorlib.com/sparkling/tag/formatting-2/'
-                                   class='tag-link-96 tag-link-position-19' title='1 topic' style='font-size: 8pt;'>formatting</a>
-                                <a href='https://colorlib.com/sparkling/tag/ftw/'
-                                   class='tag-link-97 tag-link-position-20' title='1 topic'
-                                   style='font-size: 8pt;'>FTW</a>
-                                <a href='https://colorlib.com/sparkling/tag/fun/'
-                                   class='tag-link-98 tag-link-position-21' title='1 topic'
-                                   style='font-size: 8pt;'>Fun</a>
-                                <a href='https://colorlib.com/sparkling/tag/gallery/'
-                                   class='tag-link-99 tag-link-position-22' title='3 topics'
-                                   style='font-size: 12.516129032258pt;'>gallery</a>
-                                <a href='https://colorlib.com/sparkling/tag/html/'
-                                   class='tag-link-105 tag-link-position-23' title='5 topics'
-                                   style='font-size: 15.225806451613pt;'>html</a>
-                                <a href='https://colorlib.com/sparkling/tag/image/'
-                                   class='tag-link-106 tag-link-position-24' title='7 topics'
-                                   style='font-size: 17.032258064516pt;'>image</a>
-                                <a href='https://colorlib.com/sparkling/tag/jetpack-2/'
-                                   class='tag-link-109 tag-link-position-25' title='3 topics'
-                                   style='font-size: 12.516129032258pt;'>jetpack</a>
-                                <a href='https://colorlib.com/sparkling/tag/layout/'
-                                   class='tag-link-111 tag-link-position-26' title='4 topics'
-                                   style='font-size: 14.021505376344pt;'>layout</a>
-                                <a href='https://colorlib.com/sparkling/tag/link/'
-                                   class='tag-link-112 tag-link-position-27' title='2 topics'
-                                   style='font-size: 10.709677419355pt;'>link</a>
-                                <a href='https://colorlib.com/sparkling/tag/lists-2/'
-                                   class='tag-link-113 tag-link-position-28' title='1 topic' style='font-size: 8pt;'>lists</a>
-                                <a href='https://colorlib.com/sparkling/tag/love/'
-                                   class='tag-link-115 tag-link-position-29' title='1 topic' style='font-size: 8pt;'>Love</a>
-                                <a href='https://colorlib.com/sparkling/tag/markup-2/'
-                                   class='tag-link-116 tag-link-position-30' title='6 topics'
-                                   style='font-size: 16.279569892473pt;'>markup</a>
-                                <a href='https://colorlib.com/sparkling/tag/media/'
-                                   class='tag-link-117 tag-link-position-31' title='1 topic' style='font-size: 8pt;'>media</a>
-                                <a href='https://colorlib.com/sparkling/tag/mothership/'
-                                   class='tag-link-122 tag-link-position-32' title='1 topic' style='font-size: 8pt;'>Mothership</a>
-                                <a href='https://colorlib.com/sparkling/tag/mustread/'
-                                   class='tag-link-123 tag-link-position-33' title='1 topic' style='font-size: 8pt;'>Must
-                                    Read</a>
-                                <a href='https://colorlib.com/sparkling/tag/nailedit/'
-                                   class='tag-link-124 tag-link-position-34' title='1 topic' style='font-size: 8pt;'>Nailed
-                                    It</a>
-                                <a href='https://colorlib.com/sparkling/tag/pagination/'
-                                   class='tag-link-126 tag-link-position-35' title='1 topic' style='font-size: 8pt;'>pagination</a>
-                                <a href='https://colorlib.com/sparkling/tag/post-formats/'
-                                   class='tag-link-194 tag-link-position-36' title='16 topics' style='font-size: 22pt;'>Post
-                                    Formats</a>
-                                <a href='https://colorlib.com/sparkling/tag/quote/'
-                                   class='tag-link-139 tag-link-position-37' title='2 topics'
-                                   style='font-size: 10.709677419355pt;'>quote</a>
-                                <a href='https://colorlib.com/sparkling/tag/shortcode/'
-                                   class='tag-link-145 tag-link-position-38' title='6 topics'
-                                   style='font-size: 16.279569892473pt;'>shortcode</a>
-                                <a href='https://colorlib.com/sparkling/tag/standard-2/'
-                                   class='tag-link-147 tag-link-position-39' title='2 topics'
-                                   style='font-size: 10.709677419355pt;'>standard</a>
-                                <a href='https://colorlib.com/sparkling/tag/template/'
-                                   class='tag-link-159 tag-link-position-40' title='12 topics'
-                                   style='font-size: 20.193548387097pt;'>template</a>
-                                <a href='https://colorlib.com/sparkling/tag/title/'
-                                   class='tag-link-164 tag-link-position-41' title='5 topics'
-                                   style='font-size: 15.225806451613pt;'>title</a>
-                                <a href='https://colorlib.com/sparkling/tag/twitter-2/'
-                                   class='tag-link-166 tag-link-position-42' title='2 topics'
-                                   style='font-size: 10.709677419355pt;'>twitter</a>
-                                <a href='https://colorlib.com/sparkling/tag/video/'
-                                   class='tag-link-169 tag-link-position-43' title='3 topics'
-                                   style='font-size: 12.516129032258pt;'>video</a>
-                                <a href='https://colorlib.com/sparkling/tag/videopress/'
-                                   class='tag-link-170 tag-link-position-44' title='2 topics'
-                                   style='font-size: 10.709677419355pt;'>videopress</a>
-                                <a href='https://colorlib.com/sparkling/tag/wordpress-tv/'
-                                   class='tag-link-173 tag-link-position-45' title='2 topics'
-                                   style='font-size: 10.709677419355pt;'>wordpress.tv</a></div>
+                                {% for tag in tags %}
+                                    <a href='#' class='tag-link-67 tag-link-position-2'>{{tag}}</a>
+                                {% endfor %}
+                            </div>
                         </aside>
                     </div>
                 </div>
