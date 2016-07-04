@@ -20,5 +20,5 @@ def post_detail(request, post_slug):
     tags = []
     for post in posts:
         tags.extend(post.tags)
-    context = {'post': post, 'categories': categories, 'tags': tags, 'posts': posts}
+    context = {'post': post, 'categories': categories, 'tags': set(tags), 'posts': posts}
     return render(request, 'blog/post_detail.html', context)
