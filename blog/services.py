@@ -10,6 +10,6 @@ def get_post_details(post_slug):
 
     # calculate all tags for all posts
     tags = []
-    for post in posts:
-        tags.extend(post.tags)
+    for blog_post in posts:
+        tags.extend(blog_post.tags)
     return post, categories, posts, tags
