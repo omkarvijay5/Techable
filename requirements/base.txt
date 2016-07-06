@@ -4,3 +4,4 @@ dj-database-url==0.4.0
 django-extensions==1.6.1
 django-markdown==0.8.4
 django-debug-toolbar==1.4
+Pygments==2.1.3
