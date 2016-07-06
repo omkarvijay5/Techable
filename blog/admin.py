@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.forms import ValidationError, ModelForm
 from django_markdown.models import MarkdownField
 from django_markdown.widgets import AdminMarkdownWidget
+from django_markdown.admin import MarkdownModelAdmin
 
 from blog.models import Blog, Post, Image, Category
 
@@ -38,9 +39,8 @@ class CategoryInlineAdmin(admin.TabularInline):
 
 
 @admin.register(Post)
-class PostAdmin(BaseAdminMixin, admin.ModelAdmin):
-    inlines = [CategoryInlineAdmin]
-    formfield_overrides = {MarkdownField: {'widget': AdminMarkdownWidget}}
+class PostAdmin(MarkdownModelAdmin):
+    pass
 
 
 @admin.register(Category)

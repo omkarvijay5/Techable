@@ -23,6 +23,7 @@ urlpatterns = [
     url('^markdown/', include( 'django_markdown.urls')),
 ]
 
-urlpatterns += [
-    # ... the rest of your URLconf goes here ...
-] + static.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += [
+        # ... the rest of your URLconf goes here ...
+    ] + static.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
