@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load pygment_tags %}
 
 {% block content %}
     <div id="content" class="site-content">
@@ -54,10 +55,7 @@
                                     </header>
                                     <!-- .entry-header -->
 
-                                    <div class="entry-content">
-                                        {{post.body_html|safe}}
-
-                                    </div>
+                                    {{post.markdown_to_html|highlight_code|safe}}
                                     <!-- .entry-content -->
 
                                     <footer class="entry-meta">
