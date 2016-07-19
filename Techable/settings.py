@@ -40,11 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'debug_toolbar',
-
     'django_extensions',
     'django_markdown',
+    'disqus',
 
     'blog',
 ]
@@ -121,6 +122,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
@@ -133,3 +135,6 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = BASE_DIR + "/mediafiles"
 MEDIA_URL = '/media/'
+
+DISQUS_API_KEY = 'CrOINrUtkfXt4wVKhlpOnbccw6aXjZTrbrHIpSo64TbcGVTs3f0iPZp09ibkhD6b'
+DISQUS_WEBSITE_SHORTNAME = 'techablein'
