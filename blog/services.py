@@ -4,7 +4,7 @@ from blog.models import Category, Post
 
 
 def get_post_details(post_slug):
-    post = get_object_or_404(Post.objects.select_related('author'), slug=post_slug)
+    post = get_object_or_404(Post.objects.select_related('author').prefetch_related('images'), slug=post_slug)
     categories = Category.objects.all().prefetch_related('posts')
     posts = Post.objects.filter(category__in=categories).select_related('author')
 
