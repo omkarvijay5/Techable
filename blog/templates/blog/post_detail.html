@@ -1,6 +1,34 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% load pygment_tags %}
+{% load disqus_tags %}
+
+{% block title %}Techable - {{post.title}}{% endblock %}
+
+{% block extra_head_tags %}
+<link rel="image_src" href="/media/post_images/spiderman.jpg" >
+<meta name="description" content="HyperArts designs elegant, professional, easy to navigate websites, coded to Web Standards - for better SEO - and devoid of clutter and confusion.">
+{% endblock %}
+
+{% block extra_meta_tags %}
+
+  <meta property="og:title" content="{{post.title}}"/>
+  <meta property="og:url" content="{{request.build_absolute_uri}}"/>
+  <meta property="og:description" content="{{post.description}}"/>
+  <meta property="og:image" content="/media/post_images/Spider-Man.jpeg/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="fb:app_id" content="870842409726660"/>
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@romelgomez07"/>
+
+  <meta name="twitter:title" content="{{post.title}}"/>
+  <meta name="twitter:url" content="{{request.build_absolute_uri}}"/>
+  <meta name="twitter:description" content="{{post.description}}">
+  <meta name="twitter:image:src" content="/media/post_images/Spider-Man.jpeg/"/>
+
+{% endblock %}
 
 {% block content %}
     <div id="content" class="site-content">
@@ -44,7 +72,7 @@
                                                 15 Comments
                                             </span>
 								           <span class="cat-links">
-                                               <i class="fa fa-folder-open-o"></i>
+                                               <i class="fa fa-tags" aria-hidden="true"></i>
                                                {% for tag in post.tags %}
                                                    {{tag}},
                                                {% endfor %}
@@ -56,7 +84,36 @@
                                     <!-- .entry-header -->
 
                                     {{post.markdown_to_html|highlight_code|safe}}
+                                    <div
+                                      class="fb-like"
+                                      data-share="true"
+                                      data-width="450"
+                                      data-show-faces="true">
+                                    </div>
                                     <!-- .entry-content -->
+
+
+                                    <div id="disqus_thread"></div>
+                                    <script>
+                                        /**
+                                         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                                         */
+                                        var disqus_config = function () {
+                                            this.page.url = "{{request.build_absolute_uri}}";  // Replace PAGE_URL with your page's canonical URL variable
+                                            this.page.identifier = "{{request.path}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                            this.page.title = "{{post.title}}"
+                                        };
+                                        (function() {  // DON'T EDIT BELOW THIS LINE
+                                            var d = document, s = d.createElement('script');
+
+                                            s.src = '//testlocalhostin.disqus.com/embed.js';
+
+                                            s.setAttribute('data-timestamp', +new Date());
+                                            (d.head || d.body).appendChild(s);
+                                        })();
+                                    </script>
+                                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
                                     <footer class="entry-meta">
 
@@ -100,704 +157,6 @@
 
                             </article>
                             <!-- #post-## -->
-
-
-                            <div id="comments" class="comments-area">
-
-
-                                <h2 class="comments-title">
-                                    15 thoughts on &ldquo;<span>We Created This Awesome Free WordPress Theme To Set New Industry Standard</span>&rdquo;
-                                </h2>
-
-
-                                <ol class="comment-list">
-                                    <li id="comment-1" class="comment even thread-even depth-1 parent">
-                                        <article id="div-comment-1" class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img alt=''
-                                                         src='https://secure.gravatar.com/avatar/?s=60&#038;d=mm&#038;r=g'
-                                                         srcset='https://secure.gravatar.com/avatar/?s=120&amp;d=mm&amp;r=g 2x'
-                                                         class='avatar avatar-60 photo avatar-default' height='60'
-                                                         width='60'/> <b class="fn"><a href='http://wordpress.org/'
-                                                                                       rel='external nofollow'
-                                                                                       class='url'>Mr WordPress</a></b>
-                                                    <span class="says">says:</span></div>
-                                                <!-- .comment-author -->
-
-                                                <div class="comment-metadata">
-                                                    <a href="https://colorlib.com/sparkling/hello-world/#comment-1">
-                                                        <time datetime="2014-03-28T19:17:06+00:00">
-                                                            March 28, 2014 at 7:17 pm
-                                                        </time>
-                                                    </a>
-                                                </div>
-                                                <!-- .comment-metadata -->
-
-                                            </footer>
-                                            <!-- .comment-meta -->
-
-                                            <div class="comment-content">
-                                                <p>Hi, this is a comment.<br/>
-                                                    To delete a comment, just log in and view the post&#039;s comments.
-                                                    There you will have the option to edit or delete them.</p>
-                                            </div>
-                                            <!-- .comment-content -->
-
-                                            <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                  href='https://colorlib.com/sparkling/hello-world/?replytocom=1#respond'
-                                                                  onclick='return addComment.moveForm( "div-comment-1", "1", "respond", "1" )'
-                                                                  aria-label='Reply to Mr WordPress'>Reply</a></div>
-                                        </article>
-                                        <!-- .comment-body -->
-                                        <ol class="children">
-                                            <li id="comment-79248" class="comment odd alt depth-2">
-                                                <article id="div-comment-79248" class="comment-body">
-                                                    <footer class="comment-meta">
-                                                        <div class="comment-author vcard">
-                                                            <img alt=''
-                                                                 src='https://secure.gravatar.com/avatar/57703a188c37ce0f57d9ddb9b6784c61?s=60&#038;d=mm&#038;r=g'
-                                                                 srcset='https://secure.gravatar.com/avatar/57703a188c37ce0f57d9ddb9b6784c61?s=120&amp;d=mm&amp;r=g 2x'
-                                                                 class='avatar avatar-60 photo' height='60' width='60'/>
-                                                            <b class="fn">Jason</b> <span class="says">says:</span>
-                                                        </div>
-                                                        <!-- .comment-author -->
-
-                                                        <div class="comment-metadata">
-                                                            <a href="https://colorlib.com/sparkling/hello-world/#comment-79248">
-                                                                <time datetime="2015-11-12T20:22:04+00:00">
-                                                                    November 12, 2015 at 8:22 pm
-                                                                </time>
-                                                            </a>
-                                                        </div>
-                                                        <!-- .comment-metadata -->
-
-                                                    </footer>
-                                                    <!-- .comment-meta -->
-
-                                                    <div class="comment-content">
-                                                        <p>Thanks!</p>
-                                                    </div>
-                                                    <!-- .comment-content -->
-
-                                                    <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                          href='https://colorlib.com/sparkling/hello-world/?replytocom=79248#respond'
-                                                                          onclick='return addComment.moveForm( "div-comment-79248", "79248", "respond", "1" )'
-                                                                          aria-label='Reply to Jason'>Reply</a></div>
-                                                </article>
-                                                <!-- .comment-body -->
-                                            </li>
-                                            <!-- #comment-## -->
-                                        </ol>
-                                        <!-- .children -->
-                                    </li>
-                                    <!-- #comment-## -->
-                                    <li id="comment-9228" class="comment even thread-odd thread-alt depth-1">
-                                        <article id="div-comment-9228" class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img alt=''
-                                                         src='https://secure.gravatar.com/avatar/80ba82524876e9089754b16b812e2ff7?s=60&#038;d=mm&#038;r=g'
-                                                         srcset='https://secure.gravatar.com/avatar/80ba82524876e9089754b16b812e2ff7?s=120&amp;d=mm&amp;r=g 2x'
-                                                         class='avatar avatar-60 photo' height='60' width='60'/> <b
-                                                        class="fn">Sayyed Shahbaz Ali</b> <span
-                                                        class="says">says:</span></div>
-                                                <!-- .comment-author -->
-
-                                                <div class="comment-metadata">
-                                                    <a href="https://colorlib.com/sparkling/hello-world/#comment-9228">
-                                                        <time datetime="2014-07-26T16:39:03+00:00">
-                                                            July 26, 2014 at 4:39 pm
-                                                        </time>
-                                                    </a>
-                                                </div>
-                                                <!-- .comment-metadata -->
-
-                                            </footer>
-                                            <!-- .comment-meta -->
-
-                                            <div class="comment-content">
-                                                <p>I&#8217;m using this theme on geeksbook.com but the &#8220;Popular
-                                                    posts&#8221; widget is not showing thumbnails even after i
-                                                    regenerated thumbnails. Please help!</p>
-                                            </div>
-                                            <!-- .comment-content -->
-
-                                            <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                  href='https://colorlib.com/sparkling/hello-world/?replytocom=9228#respond'
-                                                                  onclick='return addComment.moveForm( "div-comment-9228", "9228", "respond", "1" )'
-                                                                  aria-label='Reply to Sayyed Shahbaz Ali'>Reply</a>
-                                            </div>
-                                        </article>
-                                        <!-- .comment-body -->
-                                    </li>
-                                    <!-- #comment-## -->
-                                    <li id="comment-48042" class="comment odd alt thread-even depth-1">
-                                        <article id="div-comment-48042" class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img alt=''
-                                                         src='https://secure.gravatar.com/avatar/6de60376b3938e045a624588850082f3?s=60&#038;d=mm&#038;r=g'
-                                                         srcset='https://secure.gravatar.com/avatar/6de60376b3938e045a624588850082f3?s=120&amp;d=mm&amp;r=g 2x'
-                                                         class='avatar avatar-60 photo' height='60' width='60'/> <b
-                                                        class="fn">buddy</b> <span class="says">says:</span></div>
-                                                <!-- .comment-author -->
-
-                                                <div class="comment-metadata">
-                                                    <a href="https://colorlib.com/sparkling/hello-world/#comment-48042">
-                                                        <time datetime="2014-12-30T10:22:57+00:00">
-                                                            December 30, 2014 at 10:22 am
-                                                        </time>
-                                                    </a>
-                                                </div>
-                                                <!-- .comment-metadata -->
-
-                                            </footer>
-                                            <!-- .comment-meta -->
-
-                                            <div class="comment-content">
-                                                <p>Thx for this beautifull Theme! Great Job!<br/>
-                                                    By the Time i will send you a Link to my new Website. Coming soon ^^
-                                                </p>
-
-                                                <p>Thanks a lot<br/>
-                                                    buddy</p>
-                                            </div>
-                                            <!-- .comment-content -->
-
-                                            <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                  href='https://colorlib.com/sparkling/hello-world/?replytocom=48042#respond'
-                                                                  onclick='return addComment.moveForm( "div-comment-48042", "48042", "respond", "1" )'
-                                                                  aria-label='Reply to buddy'>Reply</a></div>
-                                        </article>
-                                        <!-- .comment-body -->
-                                    </li>
-                                    <!-- #comment-## -->
-                                    <li id="comment-76463" class="comment even thread-odd thread-alt depth-1 parent">
-                                        <article id="div-comment-76463" class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img alt=''
-                                                         src='https://secure.gravatar.com/avatar/b59ff622ea4e2d434ca88b438c78f8a6?s=60&#038;d=mm&#038;r=g'
-                                                         srcset='https://secure.gravatar.com/avatar/b59ff622ea4e2d434ca88b438c78f8a6?s=120&amp;d=mm&amp;r=g 2x'
-                                                         class='avatar avatar-60 photo' height='60' width='60'/> <b
-                                                        class="fn">Muralidhara</b> <span class="says">says:</span></div>
-                                                <!-- .comment-author -->
-
-                                                <div class="comment-metadata">
-                                                    <a href="https://colorlib.com/sparkling/hello-world/#comment-76463">
-                                                        <time datetime="2015-07-13T17:03:07+00:00">
-                                                            July 13, 2015 at 5:03 pm
-                                                        </time>
-                                                    </a>
-                                                </div>
-                                                <!-- .comment-metadata -->
-
-                                            </footer>
-                                            <!-- .comment-meta -->
-
-                                            <div class="comment-content">
-                                                <p>I am testing</p>
-                                            </div>
-                                            <!-- .comment-content -->
-
-                                            <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                  href='https://colorlib.com/sparkling/hello-world/?replytocom=76463#respond'
-                                                                  onclick='return addComment.moveForm( "div-comment-76463", "76463", "respond", "1" )'
-                                                                  aria-label='Reply to Muralidhara'>Reply</a></div>
-                                        </article>
-                                        <!-- .comment-body -->
-                                        <ol class="children">
-                                            <li id="comment-76464" class="comment odd alt depth-2 parent">
-                                                <article id="div-comment-76464" class="comment-body">
-                                                    <footer class="comment-meta">
-                                                        <div class="comment-author vcard">
-                                                            <img alt=''
-                                                                 src='https://secure.gravatar.com/avatar/b59ff622ea4e2d434ca88b438c78f8a6?s=60&#038;d=mm&#038;r=g'
-                                                                 srcset='https://secure.gravatar.com/avatar/b59ff622ea4e2d434ca88b438c78f8a6?s=120&amp;d=mm&amp;r=g 2x'
-                                                                 class='avatar avatar-60 photo' height='60' width='60'/>
-                                                            <b class="fn">Muralidhara</b> <span
-                                                                class="says">says:</span></div>
-                                                        <!-- .comment-author -->
-
-                                                        <div class="comment-metadata">
-                                                            <a href="https://colorlib.com/sparkling/hello-world/#comment-76464">
-                                                                <time datetime="2015-07-13T17:03:25+00:00">
-                                                                    July 13, 2015 at 5:03 pm
-                                                                </time>
-                                                            </a>
-                                                        </div>
-                                                        <!-- .comment-metadata -->
-
-                                                    </footer>
-                                                    <!-- .comment-meta -->
-
-                                                    <div class="comment-content">
-                                                        <p>Testing the reply.</p>
-                                                    </div>
-                                                    <!-- .comment-content -->
-
-                                                    <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                          href='https://colorlib.com/sparkling/hello-world/?replytocom=76464#respond'
-                                                                          onclick='return addComment.moveForm( "div-comment-76464", "76464", "respond", "1" )'
-                                                                          aria-label='Reply to Muralidhara'>Reply</a>
-                                                    </div>
-                                                </article>
-                                                <!-- .comment-body -->
-                                                <ol class="children">
-                                                    <li id="comment-76490" class="comment even depth-3">
-                                                        <article id="div-comment-76490" class="comment-body">
-                                                            <footer class="comment-meta">
-                                                                <div class="comment-author vcard">
-                                                                    <img alt=''
-                                                                         src='https://secure.gravatar.com/avatar/8fec37d96b7db7087f50fd0d36f95594?s=60&#038;d=mm&#038;r=g'
-                                                                         srcset='https://secure.gravatar.com/avatar/8fec37d96b7db7087f50fd0d36f95594?s=120&amp;d=mm&amp;r=g 2x'
-                                                                         class='avatar avatar-60 photo' height='60'
-                                                                         width='60'/> <b class="fn">this</b> <span
-                                                                        class="says">says:</span></div>
-                                                                <!-- .comment-author -->
-
-                                                                <div class="comment-metadata">
-                                                                    <a href="https://colorlib.com/sparkling/hello-world/#comment-76490">
-                                                                        <time datetime="2015-07-19T06:50:14+00:00">
-                                                                            July 19, 2015 at 6:50 am
-                                                                        </time>
-                                                                    </a>
-                                                                </div>
-                                                                <!-- .comment-metadata -->
-
-                                                            </footer>
-                                                            <!-- .comment-meta -->
-
-                                                            <div class="comment-content">
-                                                                <p>This is a nested comment.</p>
-                                                            </div>
-                                                            <!-- .comment-content -->
-
-                                                            <div class="reply"><a rel='nofollow'
-                                                                                  class='comment-reply-link'
-                                                                                  href='https://colorlib.com/sparkling/hello-world/?replytocom=76490#respond'
-                                                                                  onclick='return addComment.moveForm( "div-comment-76490", "76490", "respond", "1" )'
-                                                                                  aria-label='Reply to this'>Reply</a>
-                                                            </div>
-                                                        </article>
-                                                        <!-- .comment-body -->
-                                                    </li>
-                                                    <!-- #comment-## -->
-                                                </ol>
-                                                <!-- .children -->
-                                            </li>
-                                            <!-- #comment-## -->
-                                        </ol>
-                                        <!-- .children -->
-                                    </li>
-                                    <!-- #comment-## -->
-                                    <li id="comment-76832" class="comment odd alt thread-even depth-1">
-                                        <article id="div-comment-76832" class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img alt=''
-                                                         src='https://secure.gravatar.com/avatar/b607e0f9017952fbfd022fa22c509e05?s=60&#038;d=mm&#038;r=g'
-                                                         srcset='https://secure.gravatar.com/avatar/b607e0f9017952fbfd022fa22c509e05?s=120&amp;d=mm&amp;r=g 2x'
-                                                         class='avatar avatar-60 photo' height='60' width='60'/> <b
-                                                        class="fn">Ankara Web Tasarımcı</b> <span
-                                                        class="says">says:</span></div>
-                                                <!-- .comment-author -->
-
-                                                <div class="comment-metadata">
-                                                    <a href="https://colorlib.com/sparkling/hello-world/#comment-76832">
-                                                        <time datetime="2015-08-06T02:39:23+00:00">
-                                                            August 6, 2015 at 2:39 am
-                                                        </time>
-                                                    </a>
-                                                </div>
-                                                <!-- .comment-metadata -->
-
-                                            </footer>
-                                            <!-- .comment-meta -->
-
-                                            <div class="comment-content">
-                                                <p>That&#8217;s Cool Man, I Using it on my blog, thanks, I liked it</p>
-                                            </div>
-                                            <!-- .comment-content -->
-
-                                            <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                  href='https://colorlib.com/sparkling/hello-world/?replytocom=76832#respond'
-                                                                  onclick='return addComment.moveForm( "div-comment-76832", "76832", "respond", "1" )'
-                                                                  aria-label='Reply to Ankara Web Tasarımcı'>Reply</a>
-                                            </div>
-                                        </article>
-                                        <!-- .comment-body -->
-                                    </li>
-                                    <!-- #comment-## -->
-                                    <li id="comment-78425" class="comment even thread-odd thread-alt depth-1 parent">
-                                        <article id="div-comment-78425" class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img alt=''
-                                                         src='https://secure.gravatar.com/avatar/bdd051363e8829766c41f267761e0d55?s=60&#038;d=mm&#038;r=g'
-                                                         srcset='https://secure.gravatar.com/avatar/bdd051363e8829766c41f267761e0d55?s=120&amp;d=mm&amp;r=g 2x'
-                                                         class='avatar avatar-60 photo' height='60' width='60'/> <b
-                                                        class="fn">Christine Snowdon</b> <span class="says">says:</span>
-                                                </div>
-                                                <!-- .comment-author -->
-
-                                                <div class="comment-metadata">
-                                                    <a href="https://colorlib.com/sparkling/hello-world/#comment-78425">
-                                                        <time datetime="2015-10-08T13:06:41+00:00">
-                                                            October 8, 2015 at 1:06 pm
-                                                        </time>
-                                                    </a>
-                                                </div>
-                                                <!-- .comment-metadata -->
-
-                                            </footer>
-                                            <!-- .comment-meta -->
-
-                                            <div class="comment-content">
-                                                <p>I am looking to send out daily angel catd an psychic messages to
-                                                    others. I am an author Reiki Master and would like to develop a
-                                                    weekly Reiki Wish Area with a denoted picture and feature page on
-                                                    crystals another page promoting my personal mefiumshop
-                                                    readings. </p>
-
-                                                <p>I look forward to your help<br/>
-                                                    Thankyou<br/>
-                                                    Christine Snowdon</p>
-                                            </div>
-                                            <!-- .comment-content -->
-
-                                            <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                  href='https://colorlib.com/sparkling/hello-world/?replytocom=78425#respond'
-                                                                  onclick='return addComment.moveForm( "div-comment-78425", "78425", "respond", "1" )'
-                                                                  aria-label='Reply to Christine Snowdon'>Reply</a>
-                                            </div>
-                                        </article>
-                                        <!-- .comment-body -->
-                                        <ol class="children">
-                                            <li id="comment-78626"
-                                                class="comment byuser comment-author-aigars-silkalns bypostauthor odd alt depth-2">
-                                                <article id="div-comment-78626" class="comment-body">
-                                                    <footer class="comment-meta">
-                                                        <div class="comment-author vcard">
-                                                            <img alt=''
-                                                                 src='https://secure.gravatar.com/avatar/69f34259a9d0b7df04f0b50893c469ed?s=60&#038;d=mm&#038;r=g'
-                                                                 srcset='https://secure.gravatar.com/avatar/69f34259a9d0b7df04f0b50893c469ed?s=120&amp;d=mm&amp;r=g 2x'
-                                                                 class='avatar avatar-60 photo' height='60' width='60'/>
-                                                            <b class="fn"><a href='https://colorlib.com/'
-                                                                             rel='external nofollow'
-                                                                             class='url'>Aigars</a></b> <span
-                                                                class="says">says:</span></div>
-                                                        <!-- .comment-author -->
-
-                                                        <div class="comment-metadata">
-                                                            <a href="https://colorlib.com/sparkling/hello-world/#comment-78626">
-                                                                <time datetime="2015-10-17T09:35:39+00:00">
-                                                                    October 17, 2015 at 9:35 am
-                                                                </time>
-                                                            </a>
-                                                        </div>
-                                                        <!-- .comment-metadata -->
-
-                                                    </footer>
-                                                    <!-- .comment-meta -->
-
-                                                    <div class="comment-content">
-                                                        <p>Christine, </p>
-
-                                                        <p>Our themes are free to use for private and commercial use.
-                                                            You can download Sparkling theme and start using it without
-                                                            any restriction. However, we don&#8217;t do any custom
-                                                            development work if that&#8217;s what you are after.</p>
-                                                    </div>
-                                                    <!-- .comment-content -->
-
-                                                    <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                          href='https://colorlib.com/sparkling/hello-world/?replytocom=78626#respond'
-                                                                          onclick='return addComment.moveForm( "div-comment-78626", "78626", "respond", "1" )'
-                                                                          aria-label='Reply to Aigars'>Reply</a></div>
-                                                </article>
-                                                <!-- .comment-body -->
-                                            </li>
-                                            <!-- #comment-## -->
-                                        </ol>
-                                        <!-- .children -->
-                                    </li>
-                                    <!-- #comment-## -->
-                                    <li id="comment-79326" class="comment even thread-even depth-1 parent">
-                                        <article id="div-comment-79326" class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img alt=''
-                                                         src='https://secure.gravatar.com/avatar/775e1b0214132bc3b1f412b5852d31e3?s=60&#038;d=mm&#038;r=g'
-                                                         srcset='https://secure.gravatar.com/avatar/775e1b0214132bc3b1f412b5852d31e3?s=120&amp;d=mm&amp;r=g 2x'
-                                                         class='avatar avatar-60 photo' height='60' width='60'/> <b
-                                                        class="fn">Visitor</b> <span class="says">says:</span></div>
-                                                <!-- .comment-author -->
-
-                                                <div class="comment-metadata">
-                                                    <a href="https://colorlib.com/sparkling/hello-world/#comment-79326">
-                                                        <time datetime="2015-11-23T00:15:02+00:00">
-                                                            November 23, 2015 at 12:15 am
-                                                        </time>
-                                                    </a>
-                                                </div>
-                                                <!-- .comment-metadata -->
-
-                                            </footer>
-                                            <!-- .comment-meta -->
-
-                                            <div class="comment-content">
-                                                <p>The Full Width settings is not working in FF and Chrome. It&#8217;s
-                                                    &#8216;over-sized&#8217; by a long shot.</p>
-
-                                                <p>Responsive Images Shortcode are also &#8216;over-sized&#8217; in
-                                                    FireFox.</p>
-
-                                                <p>Otherwise a good theme.</p>
-                                            </div>
-                                            <!-- .comment-content -->
-
-                                            <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                  href='https://colorlib.com/sparkling/hello-world/?replytocom=79326#respond'
-                                                                  onclick='return addComment.moveForm( "div-comment-79326", "79326", "respond", "1" )'
-                                                                  aria-label='Reply to Visitor'>Reply</a></div>
-                                        </article>
-                                        <!-- .comment-body -->
-                                        <ol class="children">
-                                            <li id="comment-79665"
-                                                class="comment byuser comment-author-aigars-silkalns bypostauthor odd alt depth-2">
-                                                <article id="div-comment-79665" class="comment-body">
-                                                    <footer class="comment-meta">
-                                                        <div class="comment-author vcard">
-                                                            <img alt=''
-                                                                 src='https://secure.gravatar.com/avatar/69f34259a9d0b7df04f0b50893c469ed?s=60&#038;d=mm&#038;r=g'
-                                                                 srcset='https://secure.gravatar.com/avatar/69f34259a9d0b7df04f0b50893c469ed?s=120&amp;d=mm&amp;r=g 2x'
-                                                                 class='avatar avatar-60 photo' height='60' width='60'/>
-                                                            <b class="fn"><a href='https://colorlib.com/'
-                                                                             rel='external nofollow'
-                                                                             class='url'>Aigars</a></b> <span
-                                                                class="says">says:</span></div>
-                                                        <!-- .comment-author -->
-
-                                                        <div class="comment-metadata">
-                                                            <a href="https://colorlib.com/sparkling/hello-world/#comment-79665">
-                                                                <time datetime="2015-12-14T07:33:07+00:00">
-                                                                    December 14, 2015 at 7:33 am
-                                                                </time>
-                                                            </a>
-                                                        </div>
-                                                        <!-- .comment-metadata -->
-
-                                                    </footer>
-                                                    <!-- .comment-meta -->
-
-                                                    <div class="comment-content">
-                                                        <p>Visitor, </p>
-
-                                                        <p>It is working now.</p>
-                                                    </div>
-                                                    <!-- .comment-content -->
-
-                                                    <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                          href='https://colorlib.com/sparkling/hello-world/?replytocom=79665#respond'
-                                                                          onclick='return addComment.moveForm( "div-comment-79665", "79665", "respond", "1" )'
-                                                                          aria-label='Reply to Aigars'>Reply</a></div>
-                                                </article>
-                                                <!-- .comment-body -->
-                                            </li>
-                                            <!-- #comment-## -->
-                                        </ol>
-                                        <!-- .children -->
-                                    </li>
-                                    <!-- #comment-## -->
-                                    <li id="comment-79662" class="comment even thread-odd thread-alt depth-1">
-                                        <article id="div-comment-79662" class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img alt=''
-                                                         src='https://secure.gravatar.com/avatar/f3b0c5c51810d91d731c570c43fdf6e4?s=60&#038;d=mm&#038;r=g'
-                                                         srcset='https://secure.gravatar.com/avatar/f3b0c5c51810d91d731c570c43fdf6e4?s=120&amp;d=mm&amp;r=g 2x'
-                                                         class='avatar avatar-60 photo' height='60' width='60'/> <b
-                                                        class="fn">baguz</b> <span class="says">says:</span></div>
-                                                <!-- .comment-author -->
-
-                                                <div class="comment-metadata">
-                                                    <a href="https://colorlib.com/sparkling/hello-world/#comment-79662">
-                                                        <time datetime="2015-12-13T03:03:29+00:00">
-                                                            December 13, 2015 at 3:03 am
-                                                        </time>
-                                                    </a>
-                                                </div>
-                                                <!-- .comment-metadata -->
-
-                                            </footer>
-                                            <!-- .comment-meta -->
-
-                                            <div class="comment-content">
-                                                <p>This is a very clean WordPress theme. It looks like a premium theme
-                                                    while it is still completely free. Wow. </p>
-                                            </div>
-                                            <!-- .comment-content -->
-
-                                            <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                  href='https://colorlib.com/sparkling/hello-world/?replytocom=79662#respond'
-                                                                  onclick='return addComment.moveForm( "div-comment-79662", "79662", "respond", "1" )'
-                                                                  aria-label='Reply to baguz'>Reply</a></div>
-                                        </article>
-                                        <!-- .comment-body -->
-                                    </li>
-                                    <!-- #comment-## -->
-                                    <li id="comment-79855" class="comment odd alt thread-even depth-1">
-                                        <article id="div-comment-79855" class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img alt=''
-                                                         src='https://secure.gravatar.com/avatar/838b2124c137bf7dec40bf9bb7f53523?s=60&#038;d=mm&#038;r=g'
-                                                         srcset='https://secure.gravatar.com/avatar/838b2124c137bf7dec40bf9bb7f53523?s=120&amp;d=mm&amp;r=g 2x'
-                                                         class='avatar avatar-60 photo' height='60' width='60'/> <b
-                                                        class="fn">Juergen</b> <span class="says">says:</span></div>
-                                                <!-- .comment-author -->
-
-                                                <div class="comment-metadata">
-                                                    <a href="https://colorlib.com/sparkling/hello-world/#comment-79855">
-                                                        <time datetime="2016-01-04T16:48:23+00:00">
-                                                            January 4, 2016 at 4:48 pm
-                                                        </time>
-                                                    </a>
-                                                </div>
-                                                <!-- .comment-metadata -->
-
-                                            </footer>
-                                            <!-- .comment-meta -->
-
-                                            <div class="comment-content">
-                                                <p>Template fulfills my requirements very well. Thanks a lot. However,
-                                                    my i-phone view of my site does not correspond with the demo page
-                                                    &#8211; looks like my normal desktop view.</p>
-                                            </div>
-                                            <!-- .comment-content -->
-
-                                            <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                  href='https://colorlib.com/sparkling/hello-world/?replytocom=79855#respond'
-                                                                  onclick='return addComment.moveForm( "div-comment-79855", "79855", "respond", "1" )'
-                                                                  aria-label='Reply to Juergen'>Reply</a></div>
-                                        </article>
-                                        <!-- .comment-body -->
-                                    </li>
-                                    <!-- #comment-## -->
-                                    <li id="comment-80111" class="comment even thread-odd thread-alt depth-1">
-                                        <article id="div-comment-80111" class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img alt=''
-                                                         src='https://secure.gravatar.com/avatar/e6382df8e62280618c3ef3ab7eff48cc?s=60&#038;d=mm&#038;r=g'
-                                                         srcset='https://secure.gravatar.com/avatar/e6382df8e62280618c3ef3ab7eff48cc?s=120&amp;d=mm&amp;r=g 2x'
-                                                         class='avatar avatar-60 photo' height='60' width='60'/> <b
-                                                        class="fn">fra</b> <span class="says">says:</span></div>
-                                                <!-- .comment-author -->
-
-                                                <div class="comment-metadata">
-                                                    <a href="https://colorlib.com/sparkling/hello-world/#comment-80111">
-                                                        <time datetime="2016-03-06T17:46:05+00:00">
-                                                            March 6, 2016 at 5:46 pm
-                                                        </time>
-                                                    </a>
-                                                </div>
-                                                <!-- .comment-metadata -->
-
-                                            </footer>
-                                            <!-- .comment-meta -->
-
-                                            <div class="comment-content">
-                                                <p>Test comment</p>
-                                            </div>
-                                            <!-- .comment-content -->
-
-                                            <div class="reply"><a rel='nofollow' class='comment-reply-link'
-                                                                  href='https://colorlib.com/sparkling/hello-world/?replytocom=80111#respond'
-                                                                  onclick='return addComment.moveForm( "div-comment-80111", "80111", "respond", "1" )'
-                                                                  aria-label='Reply to fra'>Reply</a></div>
-                                        </article>
-                                        <!-- .comment-body -->
-                                    </li>
-                                    <!-- #comment-## -->
-                                </ol>
-                                <!-- .comment-list -->
-
-
-                                <div id="respond" class="comment-respond">
-                                    <h3 id="reply-title" class="comment-reply-title">Leave a Reply
-                                        <small><a rel="nofollow" id="cancel-comment-reply-link"
-                                                  href="/sparkling/hello-world/#respond" style="display:none;">Cancel
-                                            reply</a></small>
-                                    </h3>
-                                    <form action="https://colorlib.com/sparkling/wp-comments-post.php" method="post"
-                                          id="commentform" class="comment-form" novalidate>
-                                        <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span>
-                                            Required fields are marked <span class="required">*</span></p>
-
-                                        <p class="comment-form-comment"><label for="comment">Comment</label> <textarea
-                                                id="comment" name="comment" cols="45" rows="8" maxlength="65525"
-                                                aria-required="true" required="required"></textarea></p>
-
-                                        <p class="comment-form-author"><label for="author">Name <span
-                                                class="required">*</span></label> <input id="author" name="author"
-                                                                                         type="text" value="" size="30"
-                                                                                         maxlength="245"
-                                                                                         aria-required='true'
-                                                                                         required='required'/></p>
-
-                                        <p class="comment-form-email"><label for="email">Email <span
-                                                class="required">*</span></label> <input id="email" name="email"
-                                                                                         type="email" value="" size="30"
-                                                                                         maxlength="100"
-                                                                                         aria-describedby="email-notes"
-                                                                                         aria-required='true'
-                                                                                         required='required'/></p>
-
-                                        <p class="comment-form-url"><label for="url">Website</label> <input id="url"
-                                                                                                            name="url"
-                                                                                                            type="url"
-                                                                                                            value=""
-                                                                                                            size="30"
-                                                                                                            maxlength="200"/>
-                                        </p>
-
-                                        <p class="form-submit"><input name="submit" type="submit" id="submit"
-                                                                      class="submit" value="Post Comment"/> <input
-                                                type='hidden' name='comment_post_ID' value='1' id='comment_post_ID'/>
-                                            <input type='hidden' name='comment_parent' id='comment_parent' value='0'/>
-                                        </p>
-
-                                        <p style="display: none;"><input type="hidden" id="akismet_comment_nonce"
-                                                                         name="akismet_comment_nonce"
-                                                                         value="32d9f576c9"/></p>
-
-                                        <p style="display: none;"><input type="hidden" id="ak_js" name="ak_js"
-                                                                         value="127"/></p></form>
-                                </div>
-                                <!-- #respond -->
-
-                            </div>
-                            <!-- #comments -->
-                            <nav class="navigation post-navigation" role="navigation">
-                                <h1 class="screen-reader-text">Post navigation</h1>
-
-                                <div class="nav-links">
-                                    <div class="nav-previous"><a
-                                            href="https://colorlib.com/sparkling/post-format-gallery/" rel="prev"><i
-                                            class="fa fa-chevron-left"></i> Post Format: WordPress Tiled Gallery</a>
-                                    </div>
-                                    <div class="nav-next"><a
-                                            href="https://colorlib.com/sparkling/template-pingbacks-an-trackbacks/"
-                                            rel="next">How to Use WordPress Pingbacks And Trackbacks <i
-                                            class="fa fa-chevron-right"></i></a></div>
-                                </div>
-                                <!-- .nav-links -->
-                            </nav>
-                            <!-- .navigation -->
-
 
                         </main>
                         <!-- #main -->
@@ -858,13 +217,11 @@
                                     <!-- image -->
                                     <div class="post-image ">
 
-                                        <a href="https://colorlib.com/sparkling/template-comments/"><img width="60"
-                                                                                                         height="60"
-                                                                                                         src="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-60x60.png"
-                                                                                                         class="attachment-tab-small size-tab-small wp-post-image"
-                                                                                                         alt="slider-wallpaper-colorlib"
-                                                                                                         srcset="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-60x60.png 60w, https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-150x150.png 150w"
-                                                                                                         sizes="(max-width: 60px) 100vw, 60px"/></a>
+                                        <a href="https://colorlib.com/sparkling/template-comments/">
+                                            <img width="60" height="60" src="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-60x60.png"
+                                                 class="attachment-tab-small size-tab-small wp-post-image"
+                                                 alt="slider-wallpaper-colorlib" srcset="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-60x60.png 60w, https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-150x150.png 150w"
+                                                 sizes="(max-width: 60px) 100vw, 60px"/></a>
 
                                     </div>
                                     <!-- end post image -->
