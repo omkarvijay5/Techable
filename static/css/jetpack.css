@@ -12,9 +12,6 @@ div.jp-carousel-fadeaway {
     width: 100%;
     z-index: 2147483647;
 }
-.jp-carousel-next-button span, .jp-carousel-previous-button span {
-    background: rgba(0, 0, 0, 0) url("../modules/carousel/images/arrows.png") no-repeat scroll center center / 200px 126px;
-}
 .jp-carousel-msg {
     background-color: #fff;
     border-left: 4px solid #ffba00;
@@ -27,11 +24,6 @@ div.jp-carousel-fadeaway {
     margin: 25px 20px 0 2px;
     padding: 11px 15px;
     text-align: center;
-}
-@media not all, not all, only screen and (min--moz-device-pixel-ratio: 1.5), not all {
-.jp-carousel-next-button span, .jp-carousel-previous-button span {
-    background-image: url("../modules/carousel/images/arrows-2x.png");
-}
 }
 .jp-carousel-wrap {
     font-family: "Helvetica Neue",sans-serif !important;
@@ -182,9 +174,6 @@ div.jp-carousel-buttons a:hover {
 .jp-carousel-close-hint:hover span {
     border-color: #fff;
 }
-a.jp-carousel-image-download, div.jp-carousel-buttons a.jp-carousel-commentlink, div.jp-carousel-buttons a.jp-carousel-reblog {
-    background: rgba(0, 0, 0, 0) url("../modules/carousel/images/carousel-sprite.png?5") no-repeat scroll 0 0 / 16px 200px;
-}
 div.jp-carousel-buttons a.jp-carousel-commentlink, div.jp-carousel-buttons a.jp-carousel-reblog {
     margin: 0 14px 0 0 !important;
 }
@@ -209,11 +198,6 @@ div.jp-carousel-buttons a.jp-carousel-reblog.reblogged:hover {
 div.jp-carousel-buttons a.jp-carousel-reblog:hover {
     background-position: 6px -56px;
     color: #68c9e8;
-}
-@media not all, not all, only screen and (min--moz-device-pixel-ratio: 1.5), not all {
-a.jp-carousel-image-download, div.jp-carousel-buttons a.jp-carousel-commentlink, div.jp-carousel-buttons a.jp-carousel-reblog {
-    background-image: url("../modules/carousel/images/carousel-sprite-2x.png?5");
-}
 }
 div#carousel-reblog-box {
     background: #222 none repeat scroll 0 0;
@@ -1730,29 +1714,6 @@ body div.slideshow-window * img {
 .slideshow-window:hover .slideshow-controls {
     opacity: 1;
 }
-body div div.slideshow-controls a, body div div.slideshow-controls a:hover {
-    background-color: rgba(0, 0, 0, 0.6) !important;
-    background-image: url("../modules/shortcodes/img/slideshow-controls.png") !important;
-    background-position: -34px 8px !important;
-    background-repeat: no-repeat;
-    background-size: 142px 16px !important;
-    border: 2px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 10em !important;
-    color: #222 !important;
-    display: inline-block !important;
-    height: 32px !important;
-    line-height: 32px !important;
-    margin: 0 5px !important;
-    padding: 0 !important;
-    text-align: center !important;
-    transition: border-color 300ms ease-out 0s;
-    width: 32px !important;
-}
-@media not all {
-body div div.slideshow-controls a, body div div.slideshow-controls a:hover {
-    background-image: url("../modules/shortcodes/img/slideshow-controls-2x.png") !important;
-}
-}
 body div div.slideshow-controls a:hover {
     border-color: rgba(255, 255, 255, 1) !important;
 }
@@ -1821,46 +1782,6 @@ body.presentation-wrapper-fullscreen-parent, html.presentation-wrapper-fullscree
 }
 .presentation .slide-content {
     padding: 30px;
-}
-.presentation .nav-arrow-left, .presentation .nav-arrow-right, .presentation .nav-fullscreen-button {
-    background-repeat: no-repeat;
-    opacity: 0;
-    position: absolute;
-    transition: opacity 0.25s ease 0s;
-    width: 34px;
-    z-index: 2;
-}
-.presentation .nav-arrow-left, .presentation .nav-arrow-right {
-    background-image: url("../modules/shortcodes/images/slide-nav.png");
-    background-size: 450% 61px;
-    height: 100%;
-}
-.presentation .nav-arrow-left {
-    background-position: 4px 50%;
-    left: 0;
-}
-.presentation .nav-arrow-right {
-    background-position: -120px 50%;
-    right: 0;
-}
-.presentation .nav-fullscreen-button {
-    background-image: url("../modules/shortcodes/images/expand.png");
-    background-size: 100% 100%;
-    bottom: 0;
-    height: 32px;
-    margin: 4px;
-    right: 0;
-    width: 32px;
-    z-index: 3;
-}
-.presentation:hover .nav-arrow-left, .presentation:hover .nav-arrow-right {
-    opacity: 1;
-}
-.presentation:hover .nav-fullscreen-button {
-    opacity: 0.8;
-}
-.presentation-wrapper-fullscreen .nav-fullscreen-button {
-    background-image: url("../modules/shortcodes/images/collapse.png");
 }
 .presentation .autoplay-overlay {
     background-color: rgba(0, 0, 0, 0.75);
