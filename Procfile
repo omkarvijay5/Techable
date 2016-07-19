@@ -1,0 +1,1 @@
+web: gunicorn Techable.wsgi --log-file -
