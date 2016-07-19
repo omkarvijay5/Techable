@@ -2,21 +2,25 @@
 {% load staticfiles %}
 <html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %} Techable - home {% endblock %}</title>
+  <meta charset="utf-8">
 
-    <link rel='stylesheet' id='sparkling-bootstrap-css' href='{% static "css/bootstrap.min.css" %}' type='text/css'
+   <title>{% block title %} Techable - home {% endblock %}</title>
+
+   {% block extra_meta_tags %}{% endblock %}
+
+
+  <link rel='stylesheet' id='sparkling-bootstrap-css' href='{% static "css/bootstrap.min.css" %}' type='text/css'
           media='all'/>
-    <link rel='stylesheet' id='sparkling-icons-css' href='{% static "css/font-awesome.min.css" %}' type='text/css'
+  <link rel='stylesheet' id='sparkling-icons-css' href='{% static "css/font-awesome.min.css" %}' type='text/css'
           media='all'/>
-    <link rel='stylesheet' id='sparkling-fonts-css'
+  <link rel='stylesheet' id='sparkling-fonts-css'
           href='//fonts.googleapis.com/css?family=Open+Sans%3A400italic%2C400%2C600%2C700%7CRoboto+Slab%3A400%2C300%2C700&#038;ver=4.5.3'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='flexslider-css-css' href='{% static "css/flexslider.css" %}' type='text/css'
+  <link rel='stylesheet' id='flexslider-css-css' href='{% static "css/flexslider.css" %}' type='text/css'
           media='all'/>
-    <link rel='stylesheet' id='sparkling-style-css' href='{% static "css/style.css" %}' type='text/css' media='all'/>
-    <link rel='stylesheet' id='jetpack_css-css' href='{% static "css/jetpack.css" %}' type='text/css' media='all'/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+  <link rel='stylesheet' id='sparkling-style-css' href='{% static "css/style.css" %}' type='text/css' media='all'/>
+  <link rel='stylesheet' id='jetpack_css-css' href='{% static "css/jetpack.css" %}' type='text/css' media='all'/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
 
 
     {% block extra_stylesheets %} {% endblock %}
@@ -68,11 +72,13 @@
 
     {% block extra_scripts %}{% endblock %}
 
+    {% block extra_head_tags %}{% endblock %}
+
 </head>
 
 <body class="home blog group-blog infinite-scroll">
-<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 <div id="page" class="hfeed site">
     {% block header %}
     <header id="masthead" class="site-header" role="banner">
