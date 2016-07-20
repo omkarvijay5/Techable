@@ -1,7 +1,4 @@
 from django.contrib import admin
-from django.forms import ValidationError, ModelForm
-from django_markdown.models import MarkdownField
-from django_markdown.widgets import AdminMarkdownWidget
 from django_markdown.admin import MarkdownModelAdmin
 
 from blog.models import Post, Image, Category
