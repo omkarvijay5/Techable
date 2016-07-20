@@ -10,29 +10,6 @@ from django_markdown.models import MarkdownField
 from blog_utils.slugify import unique_slugify
 
 
-class Blog(models.Model):
-    """
-    only one blog can be created
-    slug: generates slug automatically while saving object
-    """
-    title = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100)
-    description = models.TextField()
-
-    def __unicode__(self):
-        return self.title
-
-    def save(self, *args, **kwargs):
-        """
-        override save method to prevent creating more than one blog
-        """
-        if Blog.objects.count() == 1 and self.id is None:
-            raise PermissionDenied("you cannot create more than one blog")
-        elif self.id is None:
-            unique_slugify(self, self.title)
-        super(Blog, self).save(*args, **kwargs)
-
-
 class Image(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to="post_images")
