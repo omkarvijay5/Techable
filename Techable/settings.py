@@ -141,4 +141,4 @@ MEDIA_URL = '/media/'
 DISQUS_API_KEY = 'CrOINrUtkfXt4wVKhlpOnbccw6aXjZTrbrHIpSo64TbcGVTs3f0iPZp09ibkhD6b'
 DISQUS_WEBSITE_SHORTNAME = 'techablein'
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
