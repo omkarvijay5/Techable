@@ -135,7 +135,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-MEDIA_ROOT = BASE_DIR + "/mediafiles"
+MEDIA_ROOT = BASE_DIR + "/mediafiles/"
 MEDIA_URL = '/media/'
 
 DISQUS_API_KEY = 'CrOINrUtkfXt4wVKhlpOnbccw6aXjZTrbrHIpSo64TbcGVTs3f0iPZp09ibkhD6b'
