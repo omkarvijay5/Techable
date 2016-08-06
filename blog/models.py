@@ -13,6 +13,7 @@ from blog_utils.slugify import unique_slugify
 class Image(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to="post_images")
+    post = models.ForeignKey('Post')
 
     def __unicode__(self):
         return self.name
@@ -33,7 +34,6 @@ class Post(models.Model):
     is_published = models.BooleanField(default=False)
     tags = ArrayField(models.CharField(max_length=255), null=True, blank=True)
     body = MarkdownField()
-    images = models.ManyToManyField(Image, blank=True)
 
     @property
     def markdown_to_html(self):
@@ -62,7 +62,7 @@ class Category(models.Model):
     """
     name = models.CharField(max_length=10)
     description = models.TextField(null=True, blank=True)
-    posts = models.ManyToManyField('blog.Post', blank=True)
+    post = models.ForeignKey('blog.Post')
 
     class Meta:
         verbose_name_plural = 'categories'
