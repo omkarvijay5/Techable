@@ -40,7 +40,8 @@ class Post(models.Model):
         image_ref = ""
 
         for image in self.images.all():
-            image_url = settings.MEDIA_URL + image.image.url
+            image_url = image.image.url
+
             image_ref = "%s\n[%s]: %s" % (image_ref, image, image_url)
 
         md = "%s\n%s" % (self.body, image_ref)

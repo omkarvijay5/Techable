@@ -26,9 +26,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=yo*#ug+_n$6*b*d+9igzy-6870l5l3%==c-(q)rd7cy6bh343'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,17 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'debug_toolbar',
-    'django_extensions',
     'django_markdown',
     'disqus',
+    'storages',
 
     'blog',
 ]
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -135,10 +133,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-MEDIA_ROOT = BASE_DIR + "/mediafiles"
+MEDIA_ROOT = BASE_DIR + "/mediafiles/"
 MEDIA_URL = '/media/'
 
-DISQUS_API_KEY = 'CrOINrUtkfXt4wVKhlpOnbccw6aXjZTrbrHIpSo64TbcGVTs3f0iPZp09ibkhD6b'
+DISQUS_API_KEY = os.environ.get('DISQUS_API_KEY', None)
 DISQUS_WEBSITE_SHORTNAME = 'techablein'
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

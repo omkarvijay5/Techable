@@ -10,19 +10,18 @@
     {% get_meta_img_url post as meta_img_url %}
     <meta property="og:title" content="{{post.title}}"/>
     <meta property="og:url" content="{{request.build_absolute_uri}}"/>
-    <meta property="og:description" content="{{post.description}}"/>
+    <meta property="og:description" content="{{post.markdown_to_html|safe}}"/>
     <meta property="og:image" content="{{meta_img_url}}">
     <meta property="og:type" content="website"/>
     <meta property="fb:app_id" content="870842409726660"/>
 
 
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@romelgomez07"/>
+    <meta name="twitter:site" content="@nytimes"/>
 
     <meta name="twitter:title" content="{{post.title}}"/>
-    <meta name="twitter:url" content="{{request.build_absolute_uri}}"/>
     <meta name="twitter:description" content="{{post.description}}">
-    <meta name="twitter:image:src" content="/media/post_images/Spider-Man.jpeg/"/>
+    <meta name="twitter:image" content="{{meta_img_url}}"/>
 
 {% endblock %}
 
@@ -38,9 +37,6 @@
 
                         <article id="post-1"
                                  class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-slider category-uncategorized">
-                            <img width="750" height="410"
-                                 src="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-750x410.png"
-                                 class="single-featured wp-post-image" alt="slider-wallpaper-colorlib"/>
 
                             <div class="post-inner-content">
                                 <header class="entry-header page-header">
@@ -504,11 +500,8 @@
                     <aside id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widget-title">Tags</h3>
 
                         <div class="tagcloud">
-                            <a href='https://colorlib.com/sparkling/tag/8bit/'
-                               class='tag-link-66 tag-link-position-1' title='1 topic'
-                               style='font-size: 8pt;'>8BIT</a>
                             {% for tag in tags %}
-                            <a href='#' class='tag-link-67 tag-link-position-2'>{{tag}}</a>
+                                <a href='#' class='tag-link-67 tag-link-position-2'>{{tag}}</a>
                             {% endfor %}
                         </div>
                     </aside>
