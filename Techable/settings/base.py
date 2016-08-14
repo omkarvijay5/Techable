@@ -51,7 +51,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -137,5 +136,5 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = BASE_DIR + "/mediafiles/"
 MEDIA_URL = '/media/'
 
-DISQUS_API_KEY = 'CrOINrUtkfXt4wVKhlpOnbccw6aXjZTrbrHIpSo64TbcGVTs3f0iPZp09ibkhD6b'
+DISQUS_API_KEY = os.environ.get('DISQUS_API_KEY', None)
 DISQUS_WEBSITE_SHORTNAME = 'techablein'
