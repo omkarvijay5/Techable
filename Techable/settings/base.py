@@ -136,4 +136,4 @@ MEDIA_ROOT = BASE_DIR + "/mediafiles/"
 MEDIA_URL = '/media/'
 
 DISQUS_API_KEY = os.environ.get('DISQUS_API_KEY', None)
-DISQUS_WEBSITE_SHORTNAME = 'techablein'
+DISQUS_WEBSITE_SHORTNAME = 'techable-herokuapp-com'
