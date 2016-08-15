@@ -10,7 +10,7 @@
     {% get_meta_img_url post as meta_img_url %}
     <meta property="og:title" content="{{post.title}}"/>
     <meta property="og:url" content="{{request.build_absolute_uri}}"/>
-    <meta property="og:description" content="{{post.markdown_to_html|safe}}"/>
+    <meta property="og:description" content="{{post.title}}"/>
     <meta property="og:image" content="{{meta_img_url}}">
     <meta property="og:type" content="website"/>
     <meta property="fb:app_id" content="870842409726660"/>
