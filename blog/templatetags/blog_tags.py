@@ -1,3 +1,5 @@
+import re
+
 from django import template
 from django.conf import settings
 from django.contrib.sites.models import Site
@@ -13,3 +15,7 @@ def get_meta_img_url(post):
     if post_images:
         return post_images[0].image.url
     return 'http://' + domain_name + settings.STATIC_URL + "/images/slider-wallpaper-colorlib-750x410.png"
+
+@register.filter
+def meta_desc(post):
+    return re.sub("(<[^>]+>)", '', post.markdown_to_html)[:100]
