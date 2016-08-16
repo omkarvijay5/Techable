@@ -10,17 +10,18 @@
     {% get_meta_img_url post as meta_img_url %}
     <meta property="og:title" content="{{post.title}}"/>
     <meta property="og:url" content="{{request.build_absolute_uri}}"/>
-    <meta property="og:description" content="{{post.title}}"/>
+
+    <meta property="og:description" content="{{post|meta_desc}}"/>
     <meta property="og:image" content="{{meta_img_url}}">
 
     <meta property="fb:app_id" content="870842409726660"/>
     <meta property="og:type" content="website"/>
 
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@nytimes"/>
+    <meta name="twitter:site" content="@omkarvijay5"/>
 
     <meta name="twitter:title" content="{{post.title}}"/>
-    <meta name="twitter:description" content="{{post.description}}">
+    <meta name="twitter:description" content="{{post|meta_desc}}">
     <meta name="twitter:image" content="{{meta_img_url}}"/>
 
 {% endblock %}
