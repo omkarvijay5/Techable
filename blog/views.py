@@ -2,11 +2,13 @@ from django.shortcuts import render
 
 
 # Create your views here.
-from blog.services import get_post_details
+from blog.services import get_post_details, get_posts_categories_tags
 
 
 def dashboard(request):
-    return render(request, 'blog/dashboard.html', {})
+    categories, posts, tags = get_posts_categories_tags()
+    context = {'categories': categories, 'tags': tags, 'posts': posts}
+    return render(request, 'blog/dashboard.html', context)
 
 
 def post_detail(request, post_slug):
