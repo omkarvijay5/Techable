@@ -70,3 +70,13 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.name
+
+class PageCounter(models.Model):
+    """
+    PageCounter: Used to count the number of hits in Techable
+    """
+    number = models.IntegerField()
+
+    def __unicode__(self):
+        return self.number
+
