@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404
 
-from blog.models import Category, Post, PageCounter
+from blog.models import Category, Post
 
 
 def get_tags(posts):
@@ -22,7 +22,3 @@ def get_posts_categories_tags():
     posts = Post.objects.all().select_related('author').prefetch_related('images')
     tags = get_tags(posts)
     return categories, posts, tags
-
-def get_page_counter():
-    page_count = PageCounter.objects.all()
-    return page_count
