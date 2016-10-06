@@ -2,12 +2,11 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.conf import settings
-from django.core.exceptions import PermissionDenied
 from django.contrib.postgres.fields import ArrayField
 from markdown import markdown
 from django_markdown.models import MarkdownField
 
-from blog_utils.slugify import unique_slugify
+from blog.utils.slugify import unique_slugify
 
 
 class Image(models.Model):
@@ -70,3 +69,16 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class Hit(models.Model):
+    """
+    PageCounter: Used to count the number of hits in the site
+    """
+    created_ts = models.DateTimeField('created', auto_now_add=True)
+    updated_ts = models.DateTimeField('updated', auto_now=True)
+    ip = models.GenericIPAddressField()
+    count = models.PositiveIntegerField(default=0)
+
+    def __unicode__(self):
+        return str(self.ip) + '-' + str(self.count)

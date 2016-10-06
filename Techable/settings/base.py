@@ -58,6 +58,9 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
+    # middleware for counting number of hits for the site
+    'blog.hit_count_middleware.HitCounter',
+
 ]
 
 ROOT_URLCONF = 'Techable.urls'
@@ -137,3 +140,6 @@ MEDIA_URL = '/media/'
 
 DISQUS_API_KEY = os.environ.get('DISQUS_API_KEY', None)
 DISQUS_WEBSITE_SHORTNAME = 'techable-herokuapp-com'
+
+# set the cookie age to 2 hours
+SESSION_COOKIE_AGE = 120

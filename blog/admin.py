@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django_markdown.admin import MarkdownModelAdmin
 
-from blog.models import Post, Image, Category
+from blog.models import Post, Image, Category, Hit
 
 
 class BaseAdminMixin(object):
@@ -25,4 +25,8 @@ class PostAdmin(MarkdownModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Hit)
+class HitCountAdmin(admin.ModelAdmin):
     pass
