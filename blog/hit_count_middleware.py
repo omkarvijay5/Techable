@@ -1,4 +1,5 @@
-from blog.models import Hit
+from blog.services import increment_hit_count
+
 
 class HitCounter(object):
 
@@ -7,7 +8,5 @@ class HitCounter(object):
             # get the user ip address
             ip = request.META.get('REMOTE_ADDR')
             request.session.save()
-            hitcount, created = Hit.objects.get_or_create(ip=ip)
-            hitcount.count += 1
-            hitcount.save()
+            increment_hit_count(ip)
         return None

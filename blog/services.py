@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404
 
-from blog.models import Category, Post
+from blog.models import Category, Post, Hit
 
 
 def get_tags(posts):
@@ -22,3 +22,8 @@ def get_posts_categories_tags():
     posts = Post.objects.all().select_related('author').prefetch_related('images')
     tags = get_tags(posts)
     return categories, posts, tags
+
+def increment_hit_count(ip):
+    hitcount, created = Hit.objects.get_or_create(ip=ip)
+    hitcount.count += 1
+    hitcount.save()
