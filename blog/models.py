@@ -11,8 +11,7 @@ from blog.utils.slugify import unique_slugify
 
 class Image(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to="post_images")
-    post = models.ForeignKey('Post')
+    image = models.ImageField(upload_to=upload_image)
 
     def __unicode__(self):
         return self.name
