@@ -1,0 +1,5 @@
+-r common.txt
+
+dj-database-url==0.4.2
+django-extensions==1.9.8
+django-debug-toolbar==1.9.1
