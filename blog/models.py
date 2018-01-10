@@ -7,12 +7,14 @@ from django.contrib.postgres.fields import ArrayField
 from markdown import markdown
 from django_markdown.models import MarkdownField
 
-from blog_utils.slugify import unique_slugify
+from blog.slugify import unique_slugify
+from base.models import TimeStampedModel
+from base.storage import upload_image
 
 
 class Image(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to="post_images")
+    image = models.ImageField(upload_to=upload_image)
 
     def __unicode__(self):
         return self.name
