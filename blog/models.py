@@ -1,11 +1,16 @@
 from __future__ import unicode_literals
 
+# django imports
 from django.db import models
 from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
-from markdown import markdown
 from django_markdown.models import MarkdownField
 
+# third party imports
+from markdown import markdown
+
+# local imports
+from base.storage import upload_image
 from blog.utils.slugify import unique_slugify
 
 

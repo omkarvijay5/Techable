@@ -14,7 +14,7 @@ class ImageAdmin(BaseAdminMixin, admin.ModelAdmin):
 
 
 class CategoryInlineAdmin(admin.TabularInline):
-    model = Category.posts.through
+    model = Category
     extra = 1
 
 
