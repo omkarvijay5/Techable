@@ -1,426 +1,165 @@
-<!doctype html>
 {% load staticfiles %}
-<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap Blog - B4 Template by Bootstrap Temple</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
 
-   <title>{% block title %} Techable - home {% endblock %}</title>
+    <!-- Extra meta tags can be added by overriding this block-->
+    {%  block extra_meta_tags %}{% endblock %}
 
-   {% block extra_meta_tags %}{% endblock %}
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href={% static "vendor/bootstrap/css/bootstrap.min.css" %}>
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href={% static  "vendor/font-awesome/css/font-awesome.min.css" %}>
+    <!-- Custom icon font-->
+    <link rel="stylesheet" href={% static "css/fontastic.css" %}>
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <!-- Fancybox-->
+    <link rel="stylesheet" href={% static  "vendor/@fancyapps/fancybox/jquery.fancybox.min.css" %}>
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href={% static  "css/style.default.css" %} id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href={% static  "css/custom.css" %}>
+    <!-- Favicon-->
+    <link rel="shortcut icon" href={% static  "favicon.png" %}>
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
+    <!-- Extra stylesheets can be added by overriding this block -->
+    {% block extra_stylesheets %}{% endblock %}
 
-  <link rel='stylesheet' id='sparkling-bootstrap-css' href='{% static "css/bootstrap.min.css" %}' type='text/css'
-          media='all'/>
-  <link rel='stylesheet' id='sparkling-icons-css' href='{% static "css/font-awesome.min.css" %}' type='text/css'
-          media='all'/>
-  <link rel='stylesheet' id='sparkling-fonts-css'
-          href='//fonts.googleapis.com/css?family=Open+Sans%3A400italic%2C400%2C600%2C700%7CRoboto+Slab%3A400%2C300%2C700&#038;ver=4.5.3'
-          type='text/css' media='all'/>
-  <link rel='stylesheet' id='flexslider-css-css' href='{% static "css/flexslider.css" %}' type='text/css'
-          media='all'/>
-  <link rel='stylesheet' id='sparkling-style-css' href='{% static "css/style.css" %}' type='text/css' media='all'/>
-  <link rel='stylesheet' id='jetpack_css-css' href='{% static "css/jetpack.css" %}' type='text/css' media='all'/>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+  </head>
 
-
-    {% block extra_stylesheets %} {% endblock %}
-
-    <!-- This site uses the Google Analytics by MonsterInsights plugin v5.5 - Universal enabled - https://www.monsterinsights.com/ -->
-    <script type="text/javascript">
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
-
-	__gaTracker('create', 'UA-23581568-13', 'auto');
-	__gaTracker('set', 'forceSSL', true);
-	__gaTracker('send','pageview');
-
-
-    </script>
-
-    <!-- / Google Analytics by MonsterInsights -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-    <!-- / Google Analytics by MonsterInsights -->
-    <script type='text/javascript'
-            src='https://colorlib.com/sparkling/wp-content/plugins/jetpack/_inc/spin.js?ver=1.3'></script>
-    <script type='text/javascript'
-            src='https://colorlib.com/sparkling/wp-content/plugins/jetpack/_inc/jquery.spin.js?ver=1.3'></script>
-    <style type="text/css">.entry-content {font-family: Open Sans; font-size:14px; font-weight: normal;
-        color:#6B6B6B;}.osc_servicebox .fa { font-size: 40px; padding: 40px; background: #DA4453; border-radius: 50%;
-        color: #fff; } .osc_servicebox { text-align: center; } .woocommerce .full-width { padding-left: 15px;
-        padding-right: 15px; }
-    </style>
-    <script type='text/javascript' src='{% static "js/bootstrap.min.js" %}'></script>
-
-    <!--scroll to top, tags-->
-    <script type='text/javascript' src='{% static "js/functions.min.js" %}'></script>
-
-    <!--used for infinity scroll ajax-->
-    <script type="text/javascript">
-            //<![CDATA[
-            var infiniteScroll = {"settings":{"id":"main","ajaxurl":"https:\/\/colorlib.com\/sparkling\/?infinity=scrolling","type":"click","wrapper":true,"wrapper_class":"infinite-wrap","footer":"page","click_handle":"1","text":"Older posts","totop":"Scroll back to top","currentday":"07.01.15","order":"DESC","scripts":[],"styles":[],"google_analytics":true,"offset":0,"history":{"host":"colorlib.com\/sparkling","path":"\/page\/%d\/","use_trailing_slashes":true,"parameters":""},"query_args":{"error":"","m":"","p":0,"post_parent":"","subpost":"","subpost_id":"","attachment":"","attachment_id":0,"name":"","static":"","pagename":"","page_id":0,"second":"","minute":"","hour":"","day":0,"monthnum":0,"year":0,"w":0,"category_name":"","tag":"","cat":"","tag_id":"","author":"","author_name":"","feed":"","tb":"","paged":0,"meta_key":"","meta_value":"","preview":"","s":"","sentence":"","title":"","fields":"","menu_order":"","embed":"","category__in":[],"category__not_in":[],"category__and":[],"post__in":[],"post__not_in":[],"post_name__in":[],"tag__in":[],"tag__not_in":[],"tag__and":[],"tag_slug__in":[],"tag_slug__and":[],"post_parent__in":[],"post_parent__not_in":[],"author__in":[],"author__not_in":[],"posts_per_page":5,"ignore_sticky_posts":false,"suppress_filters":false,"cache_results":false,"update_post_term_cache":true,"update_post_meta_cache":true,"post_type":"","nopaging":false,"comments_per_page":"50","no_found_rows":false,"order":"DESC"},"last_post_date":"2015-03-15 15:36:32","stats":"blog=66302208&host=colorlib.com&v=ext&j=1:4.0.4&x_pagetype=infinite-click-jetpack"}};
-            //]]>
-
-    </script>
-    <script type='text/javascript' src='{% static "js/infinity.js" %}'></script>
-
-    <!--used for flexslider-->
-    <script type='text/javascript' src='{% static "js/flexslider.min.js" %}'></script>
-    <script type='text/javascript' src='{% static "js/flexslider-custom.js" %}'></script>
-
-    {% block extra_scripts %}{% endblock %}
-
-
-</head>
-
-<body class="home blog group-blog infinite-scroll">
-
-<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
-<div id="page" class="hfeed site">
-    {% block header %}
-    <header id="masthead" class="site-header" role="banner">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="site-navigation-inner col-sm-12">
-                        <div class="navbar-header">
-                            <button type="button" class="btn navbar-toggle" data-toggle="collapse"
-                                    data-target=".navbar-ex1-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-
-
-                            <div id="logo">
-                                <h1 class="site-name"><a class="navbar-brand" href="https://colorlib.com/sparkling/"
-                                                         title="Sparkling" rel="home">Techable</a>
-                                </h1></div>
-                            <!-- end of #logo -->
-
-
-                        </div>
-                    </div>
-                </div>
+  <body>
+    <header class="header">
+      <!-- Main Navbar-->
+      <nav class="navbar navbar-expand-lg">
+        <div class="search-area">
+          <div class="search-area-inner d-flex align-items-center justify-content-center">
+            <div class="close-btn"><i class="icon-close"></i></div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-8">
+                <form action="#">
+                  <div class="form-group">
+                    <input type="search" name="search" id="search" placeholder="What are you looking for?">
+                    <button type="submit" class="submit"><i class="icon-search-1"></i></button>
+                  </div>
+                </form>
+              </div>
             </div>
-        </nav>
-        <!-- .site-navigation -->
-    </header>
-    <!-- #masthead -->
-    {% endblock %}
-
-    {% block content %}{% endblock %}
-
-    {% block footer %}
-    <div id="footer-area">
-        <div class="container footer-inner">
-            <div class="row">
-
-
-                <div class="footer-widget-area">
-                    <div class="col-sm-4 footer-widget" role="complementary">
-                        <div id="sparkling_popular_posts-3" class="widget sparkling-popular-posts"><h3
-                                class="widgettitle">Popular Posts</h3>
-                            <!-- popular posts -->
-                            <div class="popular-posts-wrapper">
-
-
-                                <!-- post -->
-                                <div class="post">
-
-                                    <!-- image -->
-                                    <div class="post-image ">
-
-                                        <a href="https://colorlib.com/sparkling/template-comments/"><img width="60"
-                                                                                                         height="60"
-                                                                                                         src="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-60x60.png"
-                                                                                                         class="attachment-tab-small size-tab-small wp-post-image"
-                                                                                                         alt="slider-wallpaper-colorlib"
-                                                                                                         srcset="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-60x60.png 60w, https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-150x150.png 150w"
-                                                                                                         sizes="(max-width: 60px) 100vw, 60px"
-                                                                                                         data-attachment-id="1769"
-                                                                                                         data-orig-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib.png"
-                                                                                                         data-orig-size="1920,600"
-                                                                                                         data-comments-opened="1"
-                                                                                                         data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}"
-                                                                                                         data-image-title="slider-wallpaper-colorlib"
-                                                                                                         data-image-description=""
-                                                                                                         data-medium-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-300x93.png"
-                                                                                                         data-large-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-1024x320.png"/></a>
-
-                                    </div>
-                                    <!-- end post image -->
-
-                                    <!-- content -->
-                                    <div class="post-content">
-
-                                        <a href="https://colorlib.com/sparkling/template-comments/">This is how comments
-                                            will be displayed on Sparkling WP Theme</a>
-                                        <span class="date">03 Jan , 2015</span>
-
-
-                                    </div>
-                                    <!-- end content -->
-                                </div>
-                                <!-- end post -->
-
-
-                                <!-- post -->
-                                <div class="post">
-
-                                    <!-- image -->
-                                    <div class="post-image ">
-
-                                        <a href="https://colorlib.com/sparkling/template-pingbacks-an-trackbacks/"><img
-                                                width="60" height="60"
-                                                src="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/01/city-landscape-slider-60x60.jpg"
-                                                class="attachment-tab-small size-tab-small wp-post-image"
-                                                alt="city-landscape-slider"
-                                                srcset="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/01/city-landscape-slider-60x60.jpg 60w, https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/01/city-landscape-slider-150x150.jpg 150w"
-                                                sizes="(max-width: 60px) 100vw, 60px" data-attachment-id="1813"
-                                                data-orig-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/01/city-landscape-slider.jpg"
-                                                data-orig-size="1920,600" data-comments-opened="1"
-                                                data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}"
-                                                data-image-title="city-landscape-slider" data-image-description=""
-                                                data-medium-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/01/city-landscape-slider-300x93.jpg"
-                                                data-large-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/01/city-landscape-slider-1024x320.jpg"/></a>
-
-                                    </div>
-                                    <!-- end post image -->
-
-                                    <!-- content -->
-                                    <div class="post-content">
-
-                                        <a href="https://colorlib.com/sparkling/template-pingbacks-an-trackbacks/">How
-                                            to Use WordPress Pingbacks And Trackbacks</a>
-                                        <span class="date">07 Apr , 2015</span>
-
-
-                                    </div>
-                                    <!-- end content -->
-                                </div>
-                                <!-- end post -->
-
-
-                                <!-- post -->
-                                <div class="post">
-
-                                    <!-- image -->
-                                    <div class="post-image ">
-
-                                        <a href="https://colorlib.com/sparkling/hello-world/"><img width="60"
-                                                                                                   height="60"
-                                                                                                   src="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-60x60.png"
-                                                                                                   class="attachment-tab-small size-tab-small wp-post-image"
-                                                                                                   alt="slider-wallpaper-colorlib"
-                                                                                                   srcset="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-60x60.png 60w, https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-150x150.png 150w"
-                                                                                                   sizes="(max-width: 60px) 100vw, 60px"
-                                                                                                   data-attachment-id="1769"
-                                                                                                   data-orig-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib.png"
-                                                                                                   data-orig-size="1920,600"
-                                                                                                   data-comments-opened="1"
-                                                                                                   data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}"
-                                                                                                   data-image-title="slider-wallpaper-colorlib"
-                                                                                                   data-image-description=""
-                                                                                                   data-medium-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-300x93.png"
-                                                                                                   data-large-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/02/slider-wallpaper-colorlib-1024x320.png"/></a>
-
-                                    </div>
-                                    <!-- end post image -->
-
-                                    <!-- content -->
-                                    <div class="post-content">
-
-                                        <a href="https://colorlib.com/sparkling/hello-world/">We Created This Awesome
-                                            Free WordPress Theme To Set New Industry Standard</a>
-                                        <span class="date">06 Apr , 2015</span>
-
-
-                                    </div>
-                                    <!-- end content -->
-                                </div>
-                                <!-- end post -->
-
-
-                                <!-- post -->
-                                <div class="post">
-
-                                    <!-- image -->
-                                    <div class="post-image gallery">
-
-                                        <a href="https://colorlib.com/sparkling/post-format-gallery/"><img width="60"
-                                                                                                           height="60"
-                                                                                                           src="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/03/slider-image-blurry-60x60.jpg"
-                                                                                                           class="attachment-tab-small size-tab-small wp-post-image"
-                                                                                                           alt="slider-image-blurry"
-                                                                                                           srcset="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/03/slider-image-blurry-60x60.jpg 60w, https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/03/slider-image-blurry-150x150.jpg 150w"
-                                                                                                           sizes="(max-width: 60px) 100vw, 60px"
-                                                                                                           data-attachment-id="1810"
-                                                                                                           data-orig-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/03/slider-image-blurry.jpg"
-                                                                                                           data-orig-size="1920,600"
-                                                                                                           data-comments-opened="1"
-                                                                                                           data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}"
-                                                                                                           data-image-title="slider-image-blurry"
-                                                                                                           data-image-description=""
-                                                                                                           data-medium-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/03/slider-image-blurry-300x93.jpg"
-                                                                                                           data-large-file="https://colorlib.com/sparkling/wp-content/uploads/sites/5/2014/03/slider-image-blurry-1024x320.jpg"/></a>
-
-                                    </div>
-                                    <!-- end post image -->
-
-                                    <!-- content -->
-                                    <div class="post-content">
-
-                                        <a href="https://colorlib.com/sparkling/post-format-gallery/">Post Format:
-                                            WordPress Tiled Gallery</a>
-                                        <span class="date">28 Mar , 2015</span>
-
-
-                                    </div>
-                                    <!-- end content -->
-                                </div>
-                                <!-- end post -->
-
-
-                            </div>
-                            <!-- end posts wrapper -->
-
-                        </div>
-                    </div>
-                    <!-- .widget-area .first -->
-
-                    <div class="col-sm-4 footer-widget" role="complementary">
-                        <div id="sparkling-cats-3" class="widget sparkling-cats"><h3 class="widgettitle">Categories</h3>
-
-                            <div class="cats-widget">
-
-                                <ul>
-                                    <li class="cat-item cat-item-38"><a
-                                            href="https://colorlib.com/sparkling/category/post-formats/"
-                                            title="Posts in this category test post formats.">Post Formats</a>
-                                        <span>16</span>
-                                    </li>
-                                    <li class="cat-item cat-item-1"><a
-                                            href="https://colorlib.com/sparkling/category/uncategorized/">Uncategorized</a>
-                                        <span>10</span>
-                                    </li>
-                                    <li class="cat-item cat-item-49"><a
-                                            href="https://colorlib.com/sparkling/category/template-2/"
-                                            title="Posts with template-related tests">Template</a> <span>10</span>
-                                    </li>
-                                    <li class="cat-item cat-item-19"><a
-                                            href="https://colorlib.com/sparkling/category/edge-case-2/"
-                                            title="Posts that have edge-case related tests">Edge Case</a> <span>6</span>
-                                    </li>
-                                    <li class="cat-item cat-item-29"><a
-                                            href="https://colorlib.com/sparkling/category/markup/"
-                                            title="Posts in this category test markup tags and styles.">Markup</a>
-                                        <span>6</span>
-                                    </li>
-                                    <li class="cat-item cat-item-193"><a
-                                            href="https://colorlib.com/sparkling/category/slider/">Slider</a>
-                                        <span>3</span>
-                                    </li>
-                                    <li class="cat-item cat-item-30"><a
-                                            href="https://colorlib.com/sparkling/category/media-2/"
-                                            title="Posts that have media-related tests">Media</a> <span>2</span>
-                                    </li>
-                                    <li class="cat-item cat-item-190"><a
-                                            href="https://colorlib.com/sparkling/category/featured/">Featured</a> <span>2</span>
-                                    </li>
-                                </ul>
-
-                            </div>
-                            <!-- end widget content -->
-
-                        </div>
-                    </div>
-                    <!-- .widget-area .second -->
-
-                    <div class="col-sm-4 footer-widget" role="complementary">
-                        <div id="text-2" class="widget widget_text">
-                            <div class="textwidget"><p><img
-                                    src="https://colorlib.com/dazzling/wp-content/uploads/sites/6/2014/02/colorlib-logo.png"
-                                    width="240" height="auto" alt="Colorlib Logo" class="alignnone"/></p>
-
-                                <p>Awesome and completely free WordPress WooCommerce themes to take your ecommerce
-                                    website to the next level.</p>
-
-                                <p>If you are having problems with theme setup, please feel free to use Colorlib <a
-                                        href="https://colorlib.com/wp/forums/">support forum</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- .widget-area .third -->
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="container">
+          <!-- Navbar Brand -->
+          <div class="navbar-header d-flex align-items-center justify-content-between">
+            <!-- Navbar Brand --><a href="index.html" class="navbar-brand">Bootstrap Blog</a>
+            <!-- Toggle Button-->
+            <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span></span><span></span><span></span></button>
+          </div>
+          <!-- Navbar Menu -->
+          <div id="navbarcollapse" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a href="index.html" class="nav-link active ">Home</a>
+              </li>
+              <li class="nav-item"><a href="blog.html" class="nav-link ">Blog</a>
+              </li>
+              <li class="nav-item"><a href="post.html" class="nav-link ">Post</a>
+              </li>
+              <li class="nav-item"><a href="#" class="nav-link ">Contact</a>
+              </li>
+            </ul>
+            <div class="navbar-text"><a href="#" class="search-btn"><i class="icon-search-1"></i></a></div>
+            <ul class="langs navbar-text"><a href="#" class="active">EN</a><span>           </span><a href="#">ES</a></ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <footer id="colophon" class="site-footer" role="contentinfo">
-            <div class="site-info container">
-                <div class="row">
-                    <nav id="menu-social" class="social-icons">
-                        <ul id="menu-social-items" class="social-menu">
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2036"><a
-                                    href="https://twitter.com/colorlib"
-                                    onclick="__gaTracker('send', 'event', 'outbound-widget', 'https://twitter.com/colorlib', 'Twitter');"><i
-                                    class="social_icon fa"><span>Twitter</span></i></a></li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2037"><a
-                                    href="https://www.facebook.com/colorlib"
-                                    onclick="__gaTracker('send', 'event', 'outbound-widget', 'https://www.facebook.com/colorlib', 'Follow us on Facebook');"><i
-                                    class="social_icon fa"><span>Follow us on Facebook</span></i></a></li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2038"><a
-                                    href="https://www.youtube.com/channel/UCOaovjLNXdIch2vLFsw_uew"
-                                    onclick="__gaTracker('send', 'event', 'outbound-widget', 'https://www.youtube.com/channel/UCOaovjLNXdIch2vLFsw_uew', 'Follow us on Youtube');"><i
-                                    class="social_icon fa"><span>Follow us on Youtube</span></i></a></li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2039"><a
-                                    href="https://plus.google.com/+Colorlib"
-                                    onclick="__gaTracker('send', 'event', 'outbound-widget', 'https://plus.google.com/+Colorlib', 'Follow us on Google+');"><i
-                                    class="social_icon fa"><span>Follow us on Google+</span></i></a></li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2040"><a
-                                    href="https://github.com/puikinsh/"
-                                    onclick="__gaTracker('send', 'event', 'outbound-widget', 'https://github.com/puikinsh/', 'Follow us on Github');"><i
-                                    class="social_icon fa"><span>Follow us on Github</span></i></a></li>
-                        </ul>
-                    </nav>
-                    <nav role="navigation" class="col-md-6">
-                        <ul id="menu-flat-footer" class="nav footer-nav clearfix">
-                            <li id="menu-item-1799"
-                                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1799">
-                                <a href="https://colorlib.com/sparkling/">Home</a></li>
-                            <li id="menu-item-1795"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1795"><a
-                                    href="https://colorlib.com/sparkling/full-width/">Full-Width Page</a></li>
-                            <li id="menu-item-1796"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1796"><a
-                                    href="https://colorlib.com/sparkling/sample-page/">Sample Page</a></li>
-                            <li id="menu-item-1798"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1798"><a
-                                    href="https://colorlib.com/sparkling/languages/">Languages</a></li>
-                            <li id="menu-item-1797"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1797"><a
-                                    href="https://colorlib.com/sparkling/contact-us/">Contact us</a></li>
-                        </ul>
-                    </nav>
-                    <div class="copyright col-md-6">
-                        <a href="https://colorlib.com/sparkling/" title="Sparkling">Sparkling</a> All rights reserved.
-                        Theme by <a href="http://colorlib.com/" target="_blank">Colorlib</a> Powered by <a
-                            href="http://wordpress.org/" target="_blank">WordPress</a></div>
-                </div>
-            </div>
-            <!-- .site-info -->
-            <div class="scroll-to-top"><i class="fa fa-angle-up"></i></div>
-            <!-- .scroll-to-top -->
-        </footer>
-        <!-- #colophon -->
-    </div>
+    {% block content %}
     {% endblock %}
-</div>
-<!-- #page -->
 
-{% block more_disqus_scripts %}{% endblock %}
-</body>
+    <!-- Page Footer-->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="logo">
+              <h6 class="text-white">Bootstrap Blog</h6>
+            </div>
+            <div class="contact-details">
+              <p>53 Broadway, Broklyn, NY 11249</p>
+              <p>Phone: (020) 123 456 789</p>
+              <p>Email: <a href="mailto:info@company.com">Info@Company.com</a></p>
+              <ul class="social-menu">
+                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="menus d-flex">
+              <ul class="list-unstyled">
+                <li> <a href="#">My Account</a></li>
+                <li> <a href="#">Add Listing</a></li>
+                <li> <a href="#">Pricing</a></li>
+                <li> <a href="#">Privacy &amp; Policy</a></li>
+              </ul>
+              <ul class="list-unstyled">
+                <li> <a href="#">Our Partners</a></li>
+                <li> <a href="#">FAQ</a></li>
+                <li> <a href="#">How It Works</a></li>
+                <li> <a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="latest-posts"><a href="#">
+                <div class="post d-flex align-items-center">
+                  <div class="image"><img src={% static "img/small-thumbnail-1.jpg" %} alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>Hotels for all budgets</strong><span class="date last-meta">October 26, 2016</span></div>
+                </div></a><a href="#">
+                <div class="post d-flex align-items-center">
+                  <div class="image"><img src={% static  "img/small-thumbnail-2.jpg" %} alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>Great street atrs in London</strong><span class="date last-meta">October 26, 2016</span></div>
+                </div></a><a href="#">
+                <div class="post d-flex align-items-center">
+                  <div class="image"><img src={% static  "img/small-thumbnail-3.jpg" %} alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>Best coffee shops in Sydney</strong><span class="date last-meta">October 26, 2016</span></div>
+                </div></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; 2017. All rights reserved. Your great site.</p>
+            </div>
+            <div class="col-md-6 text-right">
+              <p>Template By <a href="https://bootstraptemple.com" class="text-white">Bootstrap Temple</a>
+                <!-- Please do not remove the backlink to Bootstrap Temple unless you purchase an attribution-free license @ Bootstrap Temple or support us at http://bootstrapious.com/donate. It is part of the license conditions. Thanks for understanding :)                         -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Javascript files-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"> </script>
+    <script src={% static  "vendor/bootstrap/js/bootstrap.min.js" %}></script>
+    <script src={% static "vendor/jquery.cookie/jquery.cookie.js" %}> </script>
+    <script src={% static  "vendor/@fancyapps/fancybox/jquery.fancybox.min.js" %}></script>
+    <script src={% static "js/front.js"%}></script>
+  </body>
 </html>
