@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    {% block hero %}
+        <!-- Hero Section-->
+        <section style="background: url({% block hero_image_url %}{% static "img/hero.jpg" %}{% endblock %}); background-size: cover; background-position: center center" class="hero">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7">
+                <h1>{% block hero_title %}{% endblock %}</h1><a href="#" class="hero-link">Discover More</a>
+              </div>
+            </div><a href=".intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i> Scroll Down</a>
+          </div>
+        </section>
+    {% endblock %}
+
+    {% block intro %}
+        <!-- Intro Section-->
+        <section class="intro">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <h2 class="h3">{% block intro_title %}{% endblock %}</h2>
+                <p class="text-big">
+                    {% block intro_content %}{% endblock %}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+    {% endblock %}
+
+    {% block dashboard_posts_section %}
+        <section class="featured-posts no-padding-top">
+          <div class="container">
+            {% block dashboard_posts %}{% endblock %}
+          </div>
+        </section>
+    {% endblock %}
+
+    {% block divider %}
+        <!-- Divider Section-->
+        <section style="background: url({% static "img/divider-bg.jpg" %}); background-size: cover; background-position: center bottom" class="divider">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <h2>{% block divider_title %}{% endblock %}</h2><a href="#" class="hero-link">View More</a>
+              </div>
+            </div>
+          </div>
+        </section>
+    {% endblock %}
+
+    {% block latest_posts %}{% endblock %}
+
+    {% block news_letter %}
+        <!-- Newsletter Section-->
+        <section class="newsletter no-padding-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <h2>{% block news_letter_title %}{% endblock %}</h2>
+                <p class="text-big">
+                    {% block news_letter_content %}{% endblock %}
+                </p>
+              </div>
+              <div class="col-md-8">
+                <div class="form-holder">
+                    {% block subscription_form %}{% endblock %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    {% endblock %}
+
+    {% block gallery %}
+        <!-- Gallery Section-->
+        <section class="gallery no-padding">
+          <div class="row">
+              {% block gallery_images %}{% endblock %}
+          </div>
+        </section>
+    {% endblock %}
+
+{%  endblock %}
